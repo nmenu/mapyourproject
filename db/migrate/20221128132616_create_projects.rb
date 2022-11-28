@@ -12,7 +12,7 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.integer :labor_force
       t.decimal :latitude
       t.decimal :longitude
-      t.references :user_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
