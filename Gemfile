@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #devise
 gem "devise"
 
+# To use amazon S3
+gem "aws-sdk-s3"
+
 #ruby
 ruby "3.1.2"
 
