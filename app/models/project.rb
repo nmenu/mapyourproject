@@ -1,3 +1,8 @@
 class Project < ApplicationRecord
-  belongs_to :user_id
+  has_many :photos
+  has_many :videos
+  has_many :pdfs
+  has_many :ifc_models
+  has_many :categories
+  belongs_to :user
 end
