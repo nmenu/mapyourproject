@@ -1,4 +1,5 @@
 <div class="container">
   <%= render "form", project: @project %>
-  <%= link_to "Delete project", project_path(@project), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this project ?" }, class: "btn btn-outline-primary"   %>
+  
+  <%= link_to "Delete project", project_path(@project), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this project ?" }, class: "btn btn-outline-primary" %>
 </div>

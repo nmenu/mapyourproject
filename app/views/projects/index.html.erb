@@ -5,10 +5,11 @@
     <%end%>
   </ul>
 </div>
-<!-- [...] -->
 
-<div style="width: 100%; height: 100vh;"
+  <!-- [...] -->
+
+  <div class="container"
   data-controller="projects"
   data-projects-markers-value="<%= @markers.to_json %>"
   data-projects-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+  </div>
