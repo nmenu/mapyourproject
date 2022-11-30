@@ -1,7 +1,7 @@
-<div class="container" style="padding: 90px;">
+<div class="container">
   <ul class="list-group">
     <% @projects.each do |project| %>
-      <li class="list-group-item"><td><%=project.title%> </td></li>
+      <li class="list-group-item"><td><%=project.title%> <%= link_to "Test-View Project", projects_path, class: "btn btn-primary" %> </td></li>
     <%end%>
   </ul>
 </div>
