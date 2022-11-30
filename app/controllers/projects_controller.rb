@@ -3,11 +3,13 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
 
-    # @markers = Projects.where.not(latitude: nil, longitude: nil) do | project | #  @markers = Projects.geocoded
-    #   {
-    #     lat: project.latitude,
-    #     lng: project.longitude
-    #   }
+    @markers = @projects.where.not(latitude: nil, longitude: nil).map do | project | #  @markers = Projects.geocoded
+      {
+        lat: project.latitude.to_f,
+        lng: project.longitude.to_f,
+        info_window: render_to_string(partial: "info_window", locals: {project: project})
+      }
+    end
   end
 
   def new
