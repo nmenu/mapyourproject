@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_project, only: %i[show edit update]
+  before_action :set_project, only: %i[show edit update destroy]
 
   def index
     @projects = Project.all
@@ -33,6 +33,11 @@ class ProjectsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @project.destroy
+    redirect_to projects_url, notice: "Your project was successfully destroyed."
   end
 
   private

@@ -1,15 +1,13 @@
-<div class="container">
-  <%= simple_form_for(@project) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :detail %>
-    <%= f.input :owner %>
-    <%= f.input :main_contractor %>
-    <%= f.input :year_completion %>
-    <%= f.input :duration %>
-    <%= f.input :labor_force %>
-    <%= f.input :latitude %>
-    <%= f.input :longitude %>
-    <%= f.submit class: "btn btn-primary" %>
-  <% end %>
-</div>
+ <%= simple_form_for(@project) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :detail %>
+  <%= f.input :owner %>
+  <%= f.input :main_contractor %>
+  <%= f.input :year_completion %>
+  <%= f.input :duration %>
+  <%= f.input :labor_force %>
+  <%= f.input :latitude %>
+  <%= f.input :longitude %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
