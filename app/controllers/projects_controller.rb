@@ -2,6 +2,12 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   def index
     @projects = Project.all
+
+    # @markers = Projects.where.not(latitude: nil, longitude: nil) do | project | #  @markers = Projects.geocoded
+    #   {
+    #     lat: project.latitude,
+    #     lng: project.longitude
+    #   }
   end
 
   def new
