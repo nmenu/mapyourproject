@@ -13,6 +13,13 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+      <%= f.file_field :avatar,
+                  required: true,
+                  input_html: { autocomplete: "email" }
+                  %>
+
+
+
     <div class="form-actions">
       <%= f.button :submit, "Sign up" %>
     </div>

@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+
+<% @project.photos.each do |photo| %>
+  <%= render photo %>
+<% end %>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h4>Add a photo:</h4>
+      <%= simple_form_for [@project, @photo] do |f| %>
+        <%= f.input :title, placeholder: "House" %>
+        <%= .file_field :pictures %>
+        <%= f.submit "Add", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div>
+  <%= link_to "Edit this project", edit_project_path(@project) %> |
+  <%= link_to "Back to projects", projects_path %>
+
+  <%= button_to "Destroy this project", @project, method: :delete %>
+</div>

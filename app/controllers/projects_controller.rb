@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_project, only: [:show]
   def index
     @projects = Project.all
 
@@ -10,6 +11,10 @@ class ProjectsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: {project: project})
       }
     end
+  end
+
+  def show
+    @photo = Photo.new
   end
 
   def new
@@ -29,7 +34,7 @@ class ProjectsController < ApplicationController
 
   private
 
-  def set_projects
+  def set_project
     @project = Project.find(params[:id])
   end
 
