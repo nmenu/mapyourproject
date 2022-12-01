@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_project, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index]
+  before_action :set_project, only: %i[show edit update destroy]
+
   def index
     @projects = Project.all
 
@@ -14,22 +15,37 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @photo = Photo.new
   end
 
   def new
     @project = Project.new
   end
 
+  def edit
+  end
+
   def create
     @project = Project.new(project_params)
     @project.user = current_user
     if @project.save
-      redirect_to root_path
+      redirect_to projects_path
     else
       flash[:alert] = @project.errors.full_messages.join("\n")
       render :new, status: :unprocessable_entity # message d'erreur
     end
+  end
+
+  def update
+    if @project.update(project_params)
+      redirect_to @project, notice: "Your project was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @project.destroy
+    redirect_to projects_url, notice: "Your project was successfully destroyed."
   end
 
   private

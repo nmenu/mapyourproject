@@ -1,26 +1,3 @@
-<div class="container" style="padding: 90px;">
-  <%# <%= simple_form_for(@project) do |f| %>
-    <%#= f.input :title %>
-    <%#= f.input :description %>
-    <%#= f.input :detail %>
-    <%#= f.input :owner %>
-    <%#= f.input :main_contractor %>
-    <%#= f.input :year_completion %>
-    <%#= f.input :duration %>
-    <%#= f.input :labor_force %>
-    <%#= f.input :latitude %>
-    <%#= f.input :longitude %>
-    <%#= f.submit %>
-  <%# end %>
-</div>
-
-
-<h1>New project</h1>
-
-<%= render "form", project: @project %>
-
-<br>
-
-<div>
-  <%= link_to "Back to projects", projects_path %>
+<div class="container">
+  <%= render "form", project: @project %>
 </div>

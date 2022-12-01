@@ -1,27 +1,13 @@
-<%= form_with(model: project) do |form| %>
-  <% if project.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
-        <% project.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pictures %>
-    <%= form.file_field :pictures, multiple: true %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+ <%= simple_form_for(@project) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :detail %>
+  <%= f.input :owner %>
+  <%= f.input :main_contractor %>
+  <%= f.input :year_completion %>
+  <%= f.input :duration %>
+  <%= f.input :labor_force %>
+  <%= f.input :latitude %>
+  <%= f.input :longitude %>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>
