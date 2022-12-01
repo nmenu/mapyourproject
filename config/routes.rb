@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :projects, only: %i[new create index show] do
-    resources :photos, only: %i[create]
+    resources :photos
   end
   resources :users, only: %i[index show]
 end
