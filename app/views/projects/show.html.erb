@@ -55,8 +55,7 @@
 <div>
   IMAGE
 
-  <% @project.photos.each do |picture| %>
-      <td><%= image_tag picture.image, width: "1000px" if picture.image.attached? %></td>
-
-  <% end %>
+  <%# @project.photos.each do |picture| %>
+      <td><%#= image_tag picture.image, width: "1000px" if picture.image.attached? %></td>
+  <%# end %>
 </div>

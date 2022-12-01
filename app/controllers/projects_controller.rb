@@ -25,6 +25,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @project.photos << Photo.new
+    @project.pdf << Pdf.new
   end
 
   def edit
