@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_project, only: %i[show edit update destroy]
 
   def index
@@ -9,7 +9,8 @@ class ProjectsController < ApplicationController
       {
         lat: project.latitude.to_f,
         lng: project.longitude.to_f,
-        info_window: render_to_string(partial: "info_window", locals: {project: project})
+        link: project_path(project),
+        info_window: render_to_string(partial: "info_window", locals: { project: project})
       }
     end
   end
@@ -19,6 +20,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @project.photos << Photo.new
   end
 
   def edit
@@ -57,7 +59,8 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(
       :title, :description, :detail, :owner, :main_contractor, :year_completion,
-      :duration, :budget, :labor_force, :latitude, :longitude
+      :duration, :budget, :labor_force, :latitude, :longitude,
+      photos_attributes: [:image]
     )
   end
 end

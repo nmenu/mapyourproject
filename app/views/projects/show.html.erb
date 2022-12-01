@@ -51,3 +51,9 @@
 
   <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
 </div>
+
+<div>
+  <%= @project.photos do |image|%>
+    <%= image_tag(@project.photos[image], width: 40, height: 40,) %>
+  <% end %>
+</div>

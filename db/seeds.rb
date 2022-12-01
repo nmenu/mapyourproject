@@ -222,7 +222,15 @@ user = User.create!(
   city: "Renens",
   website: "httpw://www.lewagon.com",
   zip_code: 1020
+
 )
+
+user.avatar.attach(
+  io: File.open(Rails.root.join('app/assets/images/avatar.jpeg')),
+  filename: 'avatar.jpeg',
+  content_type: 'image/jpeg'
+)
+
 puts "done!"
 
 #----------------------------------------------------
