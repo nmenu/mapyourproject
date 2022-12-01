@@ -15,6 +15,10 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def my_projects
+    @projects = current_user.projects
+  end
+
   def show
   end
 

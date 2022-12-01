@@ -5,8 +5,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :projects, only: %i[new create index show] do
+  resources :projects do
     resources :photos
+      collection do
+        get 'my_projects', to: 'projects#my_projects', as: 'my'
+      end
+    resources :users, only: %i[index show]
   end
-  resources :users, only: %i[index show]
+  # Defines the root path route ("/")
+  # root "articles#index"
 end
