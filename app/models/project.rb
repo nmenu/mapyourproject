@@ -5,4 +5,7 @@ class Project < ApplicationRecord
   has_many :ifc_models
   has_many :categories
   belongs_to :user
+  accepts_nested_attributes_for :photos, allow_destroy: true
+
+
 end
