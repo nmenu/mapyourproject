@@ -9,7 +9,8 @@ class ProjectsController < ApplicationController
       {
         lat: project.latitude.to_f,
         lng: project.longitude.to_f,
-        info_window: render_to_string(partial: "info_window", locals: {project: project})
+        link: project_path(project),
+        info_window: render_to_string(partial: "info_window", locals: { project: project})
       }
     end
   end
