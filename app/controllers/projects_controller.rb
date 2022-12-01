@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_project, only: %i[show edit update destroy]
 
   def index
@@ -9,9 +9,14 @@ class ProjectsController < ApplicationController
       {
         lat: project.latitude.to_f,
         lng: project.longitude.to_f,
-        info_window: render_to_string(partial: "info_window", locals: {project: project})
+        link: project_path(project),
+        info_window: render_to_string(partial: "info_window", locals: { project: project})
       }
     end
+  end
+
+  def my_projects
+    @projects = current_user.projects
   end
 
   def show
