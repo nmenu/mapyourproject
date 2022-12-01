@@ -9,8 +9,8 @@
   <%= f.input :labor_force %>
   <%= f.input :latitude %>
   <%= f.input :longitude %>
-  <%= f.fields_for :pdf, @project.pdf do |ff| %>
-  <%= ff.file_field :pdf_file %>
+  <%= f.fields_for :image, @project.photos do |ff| %>
+  <%= ff.file_field :image %>
   <% end %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
