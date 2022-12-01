@@ -109,14 +109,21 @@ puts "done!"
 print "Seeding Offer 2 of User 1... "
 project = Project.create!(
   title: "Glovelier ",
-  description: "",
-  detail: "",
-  owner: "",
-  main_contractor: "",
-  year_completion: "",
-  duration: 1,
-  budget: 1,
-  labor_force: 1,
+  description: "Sur les hauteurs de Cannes, la Villa Duna – une résidence privée conçue par Marianne Preveteau et Victor Perez (chef de projet : Benoît Sgarbi) – se pare des surfaces Marmi Maximum de Fiandre Architectural Surfaces et affirme une style pur à l'élégance raffinée.",
+  detail: "Avec une vue époustouflante sur la mer méditerranée en plein cœur de la Côte d’Azur, Villa Duna est une résidence privée de 600 m² à laquelle les architectes ont donné une ligne sobre et résolument contemporaine qui souligne la beauté de la nature environnante.
+
+  Le projet a été dessiné par Marianne Preveteau et Victor Perez. Benoit Sgarbi, le chef de projet, a sélectionné les revêtements de la collection Marmi Maximum de Fiandre Architectural Surfaces pour cette réalisation. Grâce à la polyvalence des matériaux Fiandre, les architectes ont pu habiller les sols, murs et meubles de la résidence et créer ainsi un décor unique et harmonieux.
+
+  Le format choisi pour habiller toutes les surfaces de la villa est l’innovant 300×150 cm Maximum Fiandre Extralite® ; il offre une grande liberté d’utilisation tout en respectant les standards très élevés de légèreté, de résistance et de ductilité.
+  Pour les couleurs, le choix s’est porté la nuance Calacatta Light, un délicat ton crème rehaussé de subtiles veines gris clair, et sur la nuance Pietra Grey, un aplat entre le brun et le gris anthracite parcouru de fines et discrètes veinures blanches. Une finition brillante a été choisie pour les deux gammes.
+
+  Un élément architectural d’une remarquable finesse attire le regard, il s’agit de l’escalier pivotant et ses marches suspendues. Le revêtement en Pietra Grey donne l’impression qu’elles sont taillées dans le marbre, et l’effet de légèreté est accentué par la rambarde en verre transparent.",
+  owner: "Mario Grapelli",
+  main_contractor: "Titouan Sarl",
+  year_completion: "2001",
+  duration: 12,
+  budget: 2000000,
+  labor_force: 15,
   latitude: 47.35065093320557,
   longitude: 7.194970804890431,
   user: user
