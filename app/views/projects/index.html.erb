@@ -1,10 +1,9 @@
 <div class="activity-list">
   <ul>
     <% @projects.each do |project| %>
-      <li class="activity-list-item"><td><%=project.title%> </td></li>
+      <li class="activity-list-item"><td> <%= link_to project.title, project_path(project)%> </td></li>
     <%end%>
   </ul>
-  Coucou
 </div>
 
 <div class="parent"
