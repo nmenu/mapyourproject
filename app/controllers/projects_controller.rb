@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @project.photos << Photo.new
   end
 
   def edit
@@ -57,7 +58,8 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(
       :title, :description, :detail, :owner, :main_contractor, :year_completion,
-      :duration, :budget, :labor_force, :latitude, :longitude, photos_attributes: []
+      :duration, :budget, :labor_force, :latitude, :longitude,
+      photos_attributes: [:image]
     )
   end
 end
