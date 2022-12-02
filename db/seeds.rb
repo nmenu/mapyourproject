@@ -35,7 +35,14 @@ user = User.create!(
   website: "httpw://www.lewagon.com",
   zip_code: 2074
 )
+
+user.avatar.attach(
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar2.png')),
+  filename: 'avatar2.png',
+  content_type: 'image/png'
+)
 puts "done!"
+
 
 #----------------------------------------------------
 #--------SEEDING OFFER 1 OF USER 1-------------------
@@ -69,13 +76,32 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
+photo = Photo.create!(
   title: "Titre de l'image",
   description: "Description de l'image",
   url: "https://",
   project: project
 )
-
+photo.image.attach(
+  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_1.jpg')),
+  filename: '1_1.jpg',
+  content_type: 'image/jpg'
+)
+photo.image.attach(
+  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_2.jpg')),
+  filename: '1_2.jpg',
+  content_type: 'image/jpg'
+)
+photo.image.attach(
+  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_3.png')),
+  filename: '1_3.png',
+  content_type: 'image/png'
+)
+photo.image.attach(
+  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_4.jpg')),
+  filename: '1_4.jpg',
+  content_type: 'image/jpg'
+)
 Video.create!(
   title: "Titre de la video",
   description: "Description de la video",
@@ -233,8 +259,8 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatar.jpeg')),
-  filename: 'avatar.jpeg',
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar3.jpeg')),
+  filename: 'avatar3.jpeg',
   content_type: 'image/jpeg'
 )
 
@@ -498,6 +524,13 @@ user = User.create!(
   website: "httpw://www.lewagon.com",
   zip_code: 1201
 )
+
+user.avatar.attach(
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar4.jpeg')),
+  filename: 'avatar4.jpeg',
+  content_type: 'image/jpeg'
+)
+
 puts "done!"
 
 #----------------------------------------------------

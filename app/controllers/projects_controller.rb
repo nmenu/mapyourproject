@@ -65,7 +65,7 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(
       :title, :description, :detail, :owner, :main_contractor, :year_completion,
       :duration, :budget, :labor_force, :latitude, :longitude,
-      photos_attributes: [:image],
+      photos_attributes: [:images],
       pdfs_attributes: [:pdf_file]
     )
   end
