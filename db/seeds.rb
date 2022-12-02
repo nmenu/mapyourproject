@@ -37,8 +37,8 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar2.png')),
-  filename: 'avatar2.png',
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar1.png')),
+  filename: 'avatar1.png',
   content_type: 'image/png'
 )
 puts "done!"
@@ -81,29 +81,14 @@ photo = Photo.create!(
   project: project
 )
   photo.image.attach(
-    io: File.open(Rails.root.join('app/myassets/user1/1/1_1.jpg')),
+    io: File.open(Rails.root.join('app/assets/user1/1/1_1.jpg')),
     filename: '1_1.jpeg',
     content_type: 'image/jpeg'
   )
   photo.image.attach(
-     io: File.open(Rails.root.join('app/myassets/user1/1/1_2.jpg')),
+     io: File.open(Rails.root.join('app/assets/user1/1/1_2.jpg')),
      filename: '1_2.jpeg',
      content_type: 'image/jpeg'
-  )
-  photo.image.attach(
-    io: File.open(Rails.root.join('app/myassets/user1/1/1_3.jpg')),
-    filename: '1_3.jpeg',
-    content_type: 'image/jpeg'
-  )
-  photo.image.attach(
-    io: File.open(Rails.root.join('app/myassets/user1/1/1_4.jpg')),
-    filename: '1_4.jpeg',
-    content_type: 'image/jpeg'
-  )
-  photo.image.attach(
-    io: File.open(Rails.root.join('app/myassets/user1/1/1_5.jpg')),
-    filename: '1_5.jpeg',
-    content_type: 'image/jpeg'
   )
 
 Video.create!(
@@ -119,17 +104,17 @@ pdf = Pdf.create!(
 )
 
   pdf.pdf_file.attach(
-    io: File.open(Rails.root.join('app/myassets/user1/1/1_1.pdf')),
+    io: File.open(Rails.root.join('app/assets/user1/1/1_1.pdf')),
     filename: '1_1.pdf'
   )
 
-ifc= IfcModel.create!(
+ifc = IfcModel.create!(
   title: "Titre de l'image",
   description: "Description de l'image",
   project: project
 )
   ifc.file.attach(
-    io: File.open(Rails.root.join('app/myassets/user1/1/1_1.ifc')),
+    io: File.open(Rails.root.join('app/assets/user1/1/1_1.ifc')),
     filename: 'model1.ifc'
   )
 
@@ -536,18 +521,12 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar4.jpeg')),
-  filename: 'avatar4.jpeg',
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar3.jpeg')),
+  filename: 'avatar3.jpeg',
   content_type: 'image/jpeg'
 )
 
 puts "done!"
-
-user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatar3.jpeg')),
-  filename: 'avatar3.jpeg',
-  content_type: 'image/jpeg'
-)
 
 #----------------------------------------------------
 #--------SEEDING OFFER 1 OF USER 3-------------------
