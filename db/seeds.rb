@@ -37,13 +37,11 @@ user = User.create!(
 )
 puts "done!"
 
-
 user.avatar.attach(
   io: File.open(Rails.root.join('app/assets/images/avatar1.jpeg')),
   filename: 'avatar1.jpeg',
   content_type: 'image/jpeg'
 )
-
 
 #----------------------------------------------------
 #--------SEEDING OFFER 1 OF USER 1-------------------
