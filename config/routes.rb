@@ -8,10 +8,13 @@ Rails.application.routes.draw do
   resources :projects do
     resources :photos
     resources :pdfs, only: %i[new create]
-      collection do
-        get 'my_projects', to: 'projects#my_projects', as: 'my'
-      end
+    collection do
+      get 'my_projects', to: 'projects#my_projects', as: 'my'
+    end
     resources :users, only: %i[index show]
+    member do
+      get 'ifc', to: 'projects#ifc', as: 'ifc'
+    end
   end
   # Defines the root path route ("/")
   # root "articles#index"

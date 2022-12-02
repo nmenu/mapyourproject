@@ -58,7 +58,9 @@
 
   <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
 </div>
-
+<div data-controller="view-ifc">
+  <canvas id="myCanvas"></canvas>
+</div>
 <div>
   <% @project.photos.each do |picture| %>
       <td><%= image_tag picture.image, width: "1000px" if picture.image.attached? %></td>

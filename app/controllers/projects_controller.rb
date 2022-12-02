@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_project, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show, :ifc]
+  before_action :set_project, only: %i[show edit ifc update destroy]
 
   def index
     @projects = Project.all
@@ -20,6 +20,10 @@ class ProjectsController < ApplicationController
   end
 
   def show
+  end
+
+  def ifc
+    render layout: 'ifc'
   end
 
   def new
