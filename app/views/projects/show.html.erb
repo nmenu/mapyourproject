@@ -53,9 +53,13 @@
 </div>
 
 <div>
-  IMAGE
+  <% @project.photos.each do |picture| %>
+      <td><%= image_tag picture.image, width: "1000px" if picture.image.attached? %></td>
+  <% end %>
+</div>
 
-  <%# @project.photos.each do |picture| %>
-      <td><%#= image_tag picture.image, width: "1000px" if picture.image.attached? %></td>
-  <%# end %>
+<div>
+  <% @project.pdfs.each do |my_pdf| %>
+      <td><%= image_tag my_pdf.pdf_file, width: "1000px" if my_pdf.pdf_file.attached? %></td>
+  <% end %>
 </div>
