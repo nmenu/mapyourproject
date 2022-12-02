@@ -11,9 +11,9 @@ Rails.application.routes.draw do
       collection do
         get 'my_projects', to: 'projects#my_projects', as: 'my'
       end
-
+    resources :users, only: %i[index show]
   end
-  resources :users, only: %i[index show]
+
   # Defines the root path route ("/")
   # root "articles#index"
 end
