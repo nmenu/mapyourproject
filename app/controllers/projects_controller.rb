@@ -28,7 +28,6 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @project.photos << Photo.new
     @project.pdfs << Pdf.new
   end
 
@@ -39,6 +38,11 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user = current_user
     if @project.save
+      if params[:images]
+        params[:images].each do |image|
+          @project.photos.create(image: image)
+        end
+      end
       redirect_to projects_path
     else
       flash[:alert] = @project.errors.full_messages.join("\n")
@@ -69,7 +73,6 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(
       :title, :description, :detail, :owner, :main_contractor, :year_completion,
       :duration, :budget, :labor_force, :latitude, :longitude,
-      photos_attributes: [:image],
       pdfs_attributes: [:pdf_file]
     )
   end

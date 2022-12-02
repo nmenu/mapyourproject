@@ -35,13 +35,13 @@ user = User.create!(
   website: "httpw://www.lewagon.com",
   zip_code: 2074
 )
-puts "done!"
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatar1.jpeg')),
-  filename: 'avatar1.jpeg',
-  content_type: 'image/jpeg'
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar2.png')),
+  filename: 'avatar2.png',
+  content_type: 'image/png'
 )
+puts "done!"
 
 #----------------------------------------------------
 #--------SEEDING OFFER 1 OF USER 1-------------------
@@ -534,6 +534,13 @@ user = User.create!(
   website: "httpw://www.lewagon.com",
   zip_code: 1201
 )
+
+user.avatar.attach(
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar4.jpeg')),
+  filename: 'avatar4.jpeg',
+  content_type: 'image/jpeg'
+)
+
 puts "done!"
 
 user.avatar.attach(

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get 'ifc', to: 'projects#ifc', as: 'ifc'
     end
   end
+
   # Defines the root path route ("/")
   # root "articles#index"
 end
