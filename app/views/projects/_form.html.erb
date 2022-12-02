@@ -10,7 +10,10 @@
   <%= f.input :latitude %>
   <%= f.input :longitude %>
   <%= f.fields_for :photos, @project.photos do |ff| %>
-    <%= ff.file_field :image %>
+  <%= ff.file_field :image %>
+  <% end %>
+    <%= f.fields_for :pdfs, @project.pdfs do |ff| %>
+  <%= ff.file_field :pdf_file %>
   <% end %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

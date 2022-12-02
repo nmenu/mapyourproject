@@ -43,6 +43,13 @@
     <strong>Latitude:</strong>
     <%= @project.latitude %>
   </p>
+  <p>
+  <strong>Pdf</strong>
+    <% @project.pdfs.each do |my_pdf| %>
+     <p>Click with right button and open image in new tab<td><%= image_tag my_pdf.pdf_file, width: "1000px" if my_pdf.pdf_file.attached? %></td></p>
+  <% end %>
+
+  </p>
 
   <p>
     <strong>Longitude:</strong>
@@ -53,7 +60,7 @@
 </div>
 
 <div>
-  <%= @project.photos do |image|%>
-    <%= image_tag(@project.photos[image], width: 40, height: 40,) %>
+  <% @project.photos.each do |picture| %>
+      <td><%= image_tag picture.image, width: "1000px" if picture.image.attached? %></td>
   <% end %>
 </div>

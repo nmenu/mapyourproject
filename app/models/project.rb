@@ -6,6 +6,7 @@ class Project < ApplicationRecord
   has_many :categories, dependent: :destroy
   belongs_to :user
   accepts_nested_attributes_for :photos, allow_destroy: true
+  accepts_nested_attributes_for :pdfs, allow_destroy: true
 
 
 end
