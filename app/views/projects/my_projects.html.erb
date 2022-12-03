@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>My projects</h1>
+  <h1 class="d-flex justify-content-between">My projects<%= link_to "Create a new project", new_project_path, class: "btn btn-primary mt-0 mb-2" %></h1>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <% @projects.each do |project| %>
       <div class="col">
