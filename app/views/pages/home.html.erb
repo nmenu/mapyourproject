@@ -1,33 +1,44 @@
 <div class="container-fluid" style="padding: 80px;">
+
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
+      <div class="carousel-item active" data-bs-interval="5000">
         <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5 id="hss">First slide label</h5>
-          <p id="hss">Some representative placeholder content for the first slide.</p>
+          <div class="dark">
+            <h5 id="hss">Need to look for enterprises you can trust ? Check out their projects !</h5>
+            <p id="hss">Are you looking for reference AEC projects in your area or around the world. Find them here!</p>
+          </div>
         </div>
       </div>
-      <div class="carousel-item" data-bs-interval="2000">
+
+      <div class="carousel-item" data-bs-interval="5000">
         <img src="https://images.pexels.com/photos/2469/building-construction-building-site-constructing.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5 id="hss">Second slide label</h5>
-          <p id="hss">Some representative placeholder content for the second slide.</p>
+          <div class="dark">
+            <h5 id="hss">Are you an AEC company ? Do you need to showcase your projects ?</h5>
+            <p id="hss">Drop your projects online to demonstate your skills</p>
+          </div>
         </div>
       </div>
-      <div class="carousel-item">
+
+      <div class="carousel-item" data-bs-interval="5000">
         <img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5 id="hss">Third slide label</h5>
-          <p id="hss">Some representative placeholder content for the third slide.</p>
+          <div class="dark">
+            <h5 id="hss">3D is a good way to understand project details</h5>
+            <p id="hss"> We let you upload/display your 3D BIM models in the latest IFC format</p>
+          </div>
         </div>
       </div>
     </div>
+
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -37,9 +48,64 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <h1 id="hph1">Map Your Project</h1>
-  <p id="hpp">In this platform you can view and upload all your projects. Feel free to create an account for your company and share your projects with some images, pdf's and IFC.</p>
-    <div class="cnt"></div>
-      <%= link_to "Browse the projects", projects_path, class: "btn btn-outline-primary d-flex justify-content-center" %>
+
+  <div class="home-center">
+    <h1 id="hph1"><b>Map Your Project</b></h1>
+    <p id="hpp"><b><i>"Map your Project"</i> is a web platform, where AEC firms can showcase projects to a large audience.<br>
+      Make your SUCCESSFUL, REALIZED, projects viewable 24h/24h, year round, by anyone</p>
+
+    <%= link_to "Browse the projects", projects_path, class: "btn btn-outline-primary d-flex justify-content-center" %>
+
+    <div class="home-parag">
+      <h6 id="expl"><b>Are you a firm active in the AEC industry</b> (Architecture, Engineering or Construction) ?<br>
+      Do you need to build a reputation in your domain ? ... Make your expertise shines !<br><br>
+      <b>Are you an investor, owner, or main contractor in the field of construction ?</b><br>
+      Do you need to understand the level of competencies of an AEC company ? Review their past projetcs here!
     </div>
+
+    <div class="home-parag">
+      <%= image_tag("logoifc.png", width: 300)%>
+    </div>
+
+     <div class="home-parag">
+      <div class="div-small">
+        <ul>
+          <li><h6>You can use the most appropriate medias, from text to 3D models.</h6></li>
+          <li><h6>Upload the latest 3D BIM models (IFC format) to allow for great 3D viewing.</h6></li>
+          <li><h6>upload PDFs, and pictures, or Link back to your company web site and youtube channel.</h6></li>
+        </ul>
+      </div>
+    </div>
+     <div class="home-parag">
+      <h6>In any of these case, here you can browse though construction projects the easy way.
+      From a geographic map based on location of from a search in our database.<br>
+      Simple and easy ... find the project that interest you.</h6>
+    </div>
+     <div class="home-parag">
+      <%= image_tag("logoifc.png", width: 300)%>
+    </div>
+     <div class="home-parag"><h6>
+      How it works.
+      AEC companies can create an acoount in few clicks, manage their user profile then start to upload projects.<br>
+      Projects becomes viewable online within seconds and will be displayed on a world map. <br>
+      "Visitors" can browse projects by location or narrow it down with filters.
+
+      On the other side, you may be a visitors, interrested to find out about construction projects or find out what is a company expertise based on its realization.
+      You don't even need to register and it's all free</h6>
+    </div>
+    <div class="home-parag">
+      <%= image_tag("logoifc.png", width: 300)%> <br>
+    </div>
+    <div class="home-parag">
+
+    </div>
+    <div class="home-parag">
+
+    </div>
+      </h6>
+
+      </div>
+    </div>
+  </div>
+  </div>
 </div>
