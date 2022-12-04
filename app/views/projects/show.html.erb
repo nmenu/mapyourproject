@@ -1,69 +1,97 @@
 <div class="container">
-  <p>
-    <strong>Title:</strong>
-    <%= @project.title %>
-  </p>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @project.description %>
-  </p>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="5000">
+        <%= image_tag(@project.testes.first,  class: "d-block w-100")%>
+      </div>
 
-  <p>
-    <strong>Details:</strong>
-    <%= @project.detail %>
-  </p>
+      <div class="carousel-item" data-bs-interval="5000">
+        <%= image_tag(@project.testes.second,  class: "d-block w-100")%>
+      </div>
 
-  <p>
-    <strong>Owner:</strong>
-    <%= @project.owner %>
-  </p>
+      <div class="carousel-item" data-bs-interval="5000">
+        <%= image_tag(@project.testes.third,  class: "d-block w-100")%>
+      </div>
+    </div>
 
-  <p>
-    <strong>Main contractor:</strong>
-    <%= @project.main_contractor %>
-  </p>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div>
+    <div class="home-center">
+      <p>
+        <strong>Title:</strong>
+        <%= @project.title %>
+      </p>
 
-  <p>
-    <strong>Year:</strong>
-    <%= @project.year_completion %>
-  </p>
+      <p>
+        <strong>Description:</strong>
+        <%= @project.description %>
+      </p>
 
-  <p>
-    <strong>Duration:</strong>
-    <%= @project.duration %>
-  </p>
+      <p>
+        <strong>Details:</strong>
+        <%= @project.detail %>
+      </p>
 
-  <p>
-    <strong>Labor force:</strong>
-    <%= @project.labor_force %>
-  </p>
+      <p>
+        <strong>Owner:</strong>
+        <%= @project.owner %>
+      </p>
 
-  <p>
-    <strong>Latitude:</strong>
-    <%= @project.latitude %>
-  </p>
-  <p>
-  <strong>Pdf</strong>
-    <% @project.pdfs.each do |my_pdf| %>
-     <p>Click with right button and open image in new tab<td><%= image_tag my_pdf.pdf_file, width: "1000px" if my_pdf.pdf_file.attached? %></td></p>
-  <% end %>
+      <p>
+        <strong>Main contractor:</strong>
+        <%= @project.main_contractor %>
+      </p>
 
-  </p>
+      <p>
+        <strong>Year:</strong>
+        <%= @project.year_completion %>
+      </p>
 
-  <p>
-    <strong>Longitude:</strong>
-    <%= @project.longitude %>
-  </p>
+      <p>
+        <strong>Duration:</strong>
+        <%= @project.duration %>
+      </p>
 
-  <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
-  <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
-</div>
-<div data-controller="view-ifc">
-  <canvas id="myCanvas"></canvas>
-</div>
-<div>
-  <% @project.photos.each do |picture| %>
-      <td><%= image_tag picture.image, width: "1000px" if picture.image.attached? %></td>
-  <% end %>
-</div>
+      <p>
+        <strong>Labor force:</strong>
+        <%= @project.labor_force %>
+      </p>
+
+      <p>
+        <strong>Latitude:</strong>
+        <%= @project.latitude %>
+      </p>
+      <p>
+      <strong>Pdf</strong>
+        <% @project.pdfs.each do |my_pdf| %>
+        <p>Click with right button and open image in new tab<td><%= image_tag my_pdf.pdf_file, width: "1000px" if my_pdf.pdf_file.attached? %></td></p>
+      <% end %>
+
+      </p>
+
+      <p>
+        <strong>Longitude:</strong>
+        <%= @project.longitude %>
+      </p>
+
+      <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
+      <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
+    </div>
+
+
+  </div>
+<%= image_tag(@project.testes.second,  class: "d-block w-100")%>

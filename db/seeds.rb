@@ -37,8 +37,8 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar1.png')),
-  filename: 'avatar1.png',
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar2.png')),
+  filename: 'avatar2.png',
   content_type: 'image/png'
 )
 puts "done!"
