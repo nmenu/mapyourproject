@@ -37,12 +37,11 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar2.png')),
-  filename: 'avatar2.png',
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar1.png')),
+  filename: 'avatar1.png',
   content_type: 'image/png'
 )
 puts "done!"
-
 
 #----------------------------------------------------
 #--------SEEDING OFFER 1 OF USER 1-------------------
@@ -79,53 +78,48 @@ project = Project.create!(
 photo = Photo.create!(
   title: "Titre de l'image",
   description: "Description de l'image",
-  url: "https://",
   project: project
 )
-photo.image.attach(
-  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_1.jpg')),
-  filename: '1_1.jpg',
-  content_type: 'image/jpg'
-)
-photo.image.attach(
-  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_2.jpg')),
-  filename: '1_2.jpg',
-  content_type: 'image/jpg'
-)
-photo.image.attach(
-  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_3.png')),
-  filename: '1_3.png',
-  content_type: 'image/png'
-)
-photo.image.attach(
-  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_4.jpg')),
-  filename: '1_4.jpg',
-  content_type: 'image/jpg'
-)
+  photo.image.attach(
+    io: File.open(Rails.root.join('app/assets/user1/1/1_1.jpg')),
+    filename: '1_1.jpeg',
+    content_type: 'image/jpeg'
+  )
+  photo.image.attach(
+     io: File.open(Rails.root.join('app/assets/user1/1/1_2.jpg')),
+     filename: '1_2.jpeg',
+     content_type: 'image/jpeg'
+  )
+
 Video.create!(
   title: "Titre de la video",
   description: "Description de la video",
-  url: "https://",
   project: project
 )
 
-Pdf.create!(
+pdf = Pdf.create!(
   title: "Titre du PDF",
   description: "Description du Pdf",
-  url: "https://",
   project: project
 )
 
-IfcModel.create!(
+  pdf.pdf_file.attach(
+    io: File.open(Rails.root.join('app/assets/user1/1/1_1.pdf')),
+    filename: '1_1.pdf'
+  )
+
+ifc = IfcModel.create!(
   title: "Titre de l'image",
   description: "Description de l'image",
-  url: "https://",
   project: project
 )
+  ifc.file.attach(
+    io: File.open(Rails.root.join('app/assets/user1/1/1_1.ifc')),
+    filename: 'model1.ifc'
+  )
 
 Category.create!(
   description: "Description de l'image",
-  url: "https://",
   project: project
 )
 puts "done!"
@@ -259,8 +253,8 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar3.jpeg')),
-  filename: 'avatar3.jpeg',
+  io: File.open(Rails.root.join('app/assets/images/avatar2.jpeg')),
+  filename: 'avatar2.jpeg',
   content_type: 'image/jpeg'
 )
 
@@ -336,6 +330,7 @@ Pdf.create!(
   url: "https://",
   project: project
 )
+
 
 IfcModel.create!(
   title: "Titre de l'image",
@@ -526,8 +521,8 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar4.jpeg')),
-  filename: 'avatar4.jpeg',
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar3.jpeg')),
+  filename: 'avatar3.jpeg',
   content_type: 'image/jpeg'
 )
 

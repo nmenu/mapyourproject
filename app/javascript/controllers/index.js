@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import ProjectsController from "./projects_controller"
 application.register("projects", ProjectsController)
+
+import ViewIfcController from "./view_ifc_controller"
+application.register("view-ifc", ViewIfcController)
