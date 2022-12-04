@@ -8,15 +8,30 @@
 
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="5000">
-        <%= image_tag(@project.testes.first,  class: "d-block w-100")%>
+        <% if @project.testes.attached? %>
+          <%= image_tag(@project.testes.first,  class: "d-block w-100")%>
+        <% else%>
+
+        <% end %>
+
       </div>
 
       <div class="carousel-item" data-bs-interval="5000">
-        <%= image_tag(@project.testes.second,  class: "d-block w-100")%>
+        <% if @project.testes.attached? %>
+          <%= image_tag(@project.testes.second,  class: "d-block w-100")%>
+        <% else%>
+
+        <% end %>
+
       </div>
 
       <div class="carousel-item" data-bs-interval="5000">
-        <%= image_tag(@project.testes.third,  class: "d-block w-100")%>
+
+        <% if @project.testes.attached? %>
+          <%= image_tag(@project.testes.third,  class: "d-block w-100")%>
+        <% else%>
+
+        <% end %>
       </div>
     </div>
 
@@ -29,23 +44,48 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <div>
-    <div class="home-center">
-      <p>
-        <strong>Title:</strong>
-        <%= @project.title %>
-      </p>
 
-      <p>
-        <strong>Description:</strong>
-        <%= @project.description %>
-      </p>
+  <div class="project-center">
+    <div class="project-title">
+      <h1 id="hph2"><b><%= @project.title %></b> </h1>
+    </div>
+    <div class="project-description">
+      <p><%= @project.description %></p>
+    </div>
+    <div class="project-details">
+      <p><%= @project.detail %></p>
+    </div>
 
-      <p>
-        <strong>Details:</strong>
-        <%= @project.detail %>
-      </p>
+  </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <p><strong>Details:</strong>
+      </p>
+    </div>
       <p>
         <strong>Owner:</strong>
         <%= @project.owner %>
@@ -90,8 +130,7 @@
 
       <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
       <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
-    </div>
+
 
 
   </div>
-<%= image_tag(@project.testes.second,  class: "d-block w-100")%>
