@@ -7,11 +7,11 @@
 }
 
 .dark {
-text-align: center;
-align: center;
-width: 100%;
-background-color: rgba($color: #ffffff, $alpha: 0.5);
-z-index: 1000;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba($color: #ffffff, $alpha: 0.5);
+  z-index: 1000;
 }
 
 #hss {
@@ -26,7 +26,7 @@ z-index: 1000;
 }
 
 #hpp {
-    padding-top: 10px;
+  padding-top: 10px;
   color: rgb(60, 60, 60);
   text-align: center;
 }
@@ -37,10 +37,10 @@ z-index: 1000;
 }
 
 #expl {
-padding-top: 10px;
-padding-right: 300;
-color: rgb(60, 60, 60);
-text-align: center;
+  padding-top: 10px;
+  padding-right: 300;
+  color: rgb(60, 60, 60);
+  text-align: center;
 }
 
 .div-small {
@@ -64,8 +64,9 @@ text-align: center;
 
 .home-parag {
 
- margin: 40px;
-=======
+  margin: 40px;
+}
+
 .btn-primary {
   color: white;
 }
@@ -74,6 +75,7 @@ text-align: center;
   color: white;
 
 }
+
 .btn-outline-primary:hover {
   color: white;
 }
