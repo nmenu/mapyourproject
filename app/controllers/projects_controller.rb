@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_project, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show, :ifc]
+  before_action :set_project, only: %i[show edit ifc update destroy]
 
   def index
     @projects = Project.all
@@ -22,6 +22,10 @@ class ProjectsController < ApplicationController
   def show
   end
 
+  def ifc
+    render layout: 'ifc'
+  end
+
   def new
     @project = Project.new
     @project.pdfs << Pdf.new
@@ -34,11 +38,6 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user = current_user
     if @project.save
-      if params[:images]
-        params[:images].each do |image|
-          @project.photos.create(image: image)
-        end
-      end
       redirect_to projects_path
     else
       flash[:alert] = @project.errors.full_messages.join("\n")
@@ -67,9 +66,8 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(
-      :title, :description, :detail, :owner, :main_contractor, :year_completion,
-      :duration, :budget, :labor_force, :latitude, :longitude,
-      pdfs_attributes: [:pdf_file]
+      :title, :description, :detail, :details_01, :details_02, :details_03, :details_04, :owner, :main_contractor, :year_completion,
+      :duration, :budget, :labor_force, :latitude, :longitude, images: [], pdfs_attributes: [:pdf_file]
     )
   end
 end

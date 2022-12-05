@@ -15,7 +15,8 @@ z-index: 1000;
 }
 
 #hss {
-  text-shadow: white 1px 0 10px;
+  color: $myp;
+  text-shadow: black 10px 0 10px;
 }
 
 #hph1 {
@@ -64,4 +65,15 @@ text-align: center;
 .home-parag {
 
  margin: 40px;
+}
+.btn-primary {
+  color: white;
+}
+
+.btn-primary:hover {
+  color: white;
+
+}
+.btn-outline-primary:hover {
+  color: white;
 }

@@ -15,7 +15,6 @@ puts "done!"
 puts "BEFORE seed:"
 puts "User count: #{User.count}"
 puts "Project count: #{Project.count}"
-puts "Photo count: #{Photo.count}"
 puts "Video count: #{Video.count}"
 puts "Pdf count: #{Pdf.count}"
 puts "Ifc count: #{IfcModel.count}"
@@ -42,7 +41,6 @@ user.avatar.attach(
   content_type: 'image/png'
 )
 puts "done!"
-
 
 #----------------------------------------------------
 #--------SEEDING OFFER 1 OF USER 1-------------------
@@ -76,56 +74,28 @@ project = Project.create!(
   user: user
 )
 
-photo = Photo.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
-photo.image.attach(
-  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_1.jpg')),
-  filename: '1_1.jpg',
-  content_type: 'image/jpg'
-)
-photo.image.attach(
-  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_2.jpg')),
-  filename: '1_2.jpg',
-  content_type: 'image/jpg'
-)
-photo.image.attach(
-  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_3.png')),
-  filename: '1_3.png',
-  content_type: 'image/png'
-)
-photo.image.attach(
-  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_4.jpg')),
-  filename: '1_4.jpg',
-  content_type: 'image/jpg'
-)
 Video.create!(
   title: "Titre de la video",
   description: "Description de la video",
-  url: "https://",
   project: project
 )
 
-Pdf.create!(
+pdf = Pdf.create!(
   title: "Titre du PDF",
   description: "Description du Pdf",
-  url: "https://",
   project: project
 )
 
-IfcModel.create!(
+ifc = IfcModel.create!(
   title: "Titre de l'image",
   description: "Description de l'image",
-  url: "https://",
   project: project
 )
+# file = URI.open("https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_2.jpg")
+# project.images.attach(io: file, filename: '', content_type: 'image/jpg')
 
 Category.create!(
   description: "Description de l'image",
-  url: "https://",
   project: project
 )
 puts "done!"
@@ -155,12 +125,12 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
+project.images.attach(
+  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_1.jpg')),
+  filename: '1_1.jpeg',
+  content_type: 'image/jpeg'
 )
+
 
 Video.create!(
   title: "Titre de la video",
@@ -208,13 +178,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
-
 Video.create!(
   title: "Titre de la video",
   description: "Description de la video",
@@ -259,8 +222,8 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar3.jpeg')),
-  filename: 'avatar3.jpeg',
+  io: File.open(Rails.root.join('app/assets/images/avatar2.jpeg')),
+  filename: 'avatar2.jpeg',
   content_type: 'image/jpeg'
 )
 
@@ -316,12 +279,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Taubenloch",
-  description: "N16",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -336,6 +293,7 @@ Pdf.create!(
   url: "https://",
   project: project
 )
+
 
 IfcModel.create!(
   title: "Titre de l'image",
@@ -387,13 +345,6 @@ project = Project.create!(
   latitude: 46.91139271003274,
   longitude: 6.5447608021140695,
   user: user
-)
-
-Photo.create!(
-  title: "Taubenloch",
-  description: "N16",
-  url: "https://",
-  project: project
 )
 
 Video.create!(
@@ -474,12 +425,7 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Taubenloch",
-  description: "N16",
-  url: "https://",
-  project: project
-)
+
 
 Video.create!(
   title: "Titre de la video",
@@ -526,8 +472,8 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar4.jpeg')),
-  filename: 'avatar4.jpeg',
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar3.jpeg')),
+  filename: 'avatar3.jpeg',
   content_type: 'image/jpeg'
 )
 
@@ -552,12 +498,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -634,12 +574,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -693,12 +627,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -757,12 +685,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -818,12 +740,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -878,12 +794,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
