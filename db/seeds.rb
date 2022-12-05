@@ -74,6 +74,13 @@ project = Project.create!(
   user: user
 )
 
+project.images.attach(
+  io: URI.open(Rails.root.join('https://mapyourproject.s3.eu-west-3.amazonaws.com/0i06gtl3485hr6l92u0l0njz4vx2')),
+  filename: '1_1.jpeg',
+  content_type: 'image/jpeg'
+)
+
+
 Video.create!(
   title: "Titre de la video",
   description: "Description de la video",
@@ -86,13 +93,17 @@ pdf = Pdf.create!(
   project: project
 )
 
+  pdf.pdf_file.attach(
+    io: File.open(Rails.root.join('app/assets/user1/1/1_1.pdf')),
+    filename: '1_1.pdf'
+  )
+
 ifc = IfcModel.create!(
   title: "Titre de l'image",
   description: "Description de l'image",
   project: project
 )
-# file = URI.open("https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_2.jpg")
-# project.images.attach(io: file, filename: '', content_type: 'image/jpg')
+
 
 Category.create!(
   description: "Description de l'image",
@@ -125,12 +136,12 @@ project = Project.create!(
   user: user
 )
 
-# project.images.attach(
-#   io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_1.jpg')),
-#   filename: '1_1.jpeg',
-#   content_type: 'image/jpeg'
-# )
-
+Photo.create!(
+  title: "Titre de la photo",
+  description: "Description de la photo",
+  url: "https://",
+  project: project
+)
 
 Video.create!(
   title: "Titre de la video",
@@ -178,6 +189,13 @@ project = Project.create!(
   user: user
 )
 
+Photo.create!(
+  title: "Titre de la photo",
+  description: "Description de la photo",
+  url: "https://",
+  project: project
+)
+
 Video.create!(
   title: "Titre de la video",
   description: "Description de la video",
@@ -222,9 +240,9 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar2.png')),
-  filename: 'avatar2.png',
-  content_type: 'image/png'
+  io: File.open(Rails.root.join('app/assets/images/avatar2.jpeg')),
+  filename: 'avatar2.jpeg',
+  content_type: 'image/jpeg'
 )
 
 puts "done!"
@@ -279,6 +297,12 @@ project = Project.create!(
   user: user
 )
 
+Photo.create!(
+  title: "Taubenloch",
+  description: "N16",
+  url: "https://",
+  project: project
+)
 
 Video.create!(
   title: "Titre de la video",
@@ -345,6 +369,13 @@ project = Project.create!(
   latitude: 46.91139271003274,
   longitude: 6.5447608021140695,
   user: user
+)
+
+Photo.create!(
+  title: "Taubenloch",
+  description: "N16",
+  url: "https://",
+  project: project
 )
 
 Video.create!(
@@ -425,7 +456,12 @@ project = Project.create!(
   user: user
 )
 
-
+Photo.create!(
+  title: "Taubenloch",
+  description: "N16",
+  url: "https://",
+  project: project
+)
 
 Video.create!(
   title: "Titre de la video",
@@ -498,6 +534,12 @@ project = Project.create!(
   user: user
 )
 
+Photo.create!(
+  title: "Titre de la photo",
+  description: "Description de la photo",
+  url: "https://",
+  project: project
+)
 
 Video.create!(
   title: "Titre de la video",
@@ -574,6 +616,12 @@ project = Project.create!(
   user: user
 )
 
+Photo.create!(
+  title: "Titre de la photo",
+  description: "Description de la photo",
+  url: "https://",
+  project: project
+)
 
 Video.create!(
   title: "Titre de la video",
@@ -627,6 +675,12 @@ project = Project.create!(
   user: user
 )
 
+Photo.create!(
+  title: "Titre de la photo",
+  description: "Description de la photo",
+  url: "https://",
+  project: project
+)
 
 Video.create!(
   title: "Titre de la video",
@@ -685,6 +739,12 @@ project = Project.create!(
   user: user
 )
 
+Photo.create!(
+  title: "Titre de la photo",
+  description: "Description de la photo",
+  url: "https://",
+  project: project
+)
 
 Video.create!(
   title: "Titre de la video",
@@ -740,6 +800,12 @@ project = Project.create!(
   user: user
 )
 
+Photo.create!(
+  title: "Titre de la photo",
+  description: "Description de la photo",
+  url: "https://",
+  project: project
+)
 
 Video.create!(
   title: "Titre de la video",
@@ -794,6 +860,12 @@ project = Project.create!(
   user: user
 )
 
+Photo.create!(
+  title: "Titre de la photo",
+  description: "Description de la photo",
+  url: "https://",
+  project: project
+)
 
 Video.create!(
   title: "Titre de la video",
