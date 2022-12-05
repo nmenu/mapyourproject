@@ -125,11 +125,11 @@ project = Project.create!(
   user: user
 )
 
-project.images.attach(
-  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_1.jpg')),
-  filename: '1_1.jpeg',
-  content_type: 'image/jpeg'
-)
+# project.images.attach(
+#   io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_1.jpg')),
+#   filename: '1_1.jpeg',
+#   content_type: 'image/jpeg'
+# )
 
 
 Video.create!(
@@ -222,9 +222,9 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatar2.jpeg')),
-  filename: 'avatar2.jpeg',
-  content_type: 'image/jpeg'
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar2.png')),
+  filename: 'avatar2.png',
+  content_type: 'image/png'
 )
 
 puts "done!"
