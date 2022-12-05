@@ -125,6 +125,12 @@ project = Project.create!(
   user: user
 )
 
+project.images.attach(
+  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_1.jpg')),
+  filename: '1_1.jpeg',
+  content_type: 'image/jpeg'
+)
+
 
 Video.create!(
   title: "Titre de la video",
