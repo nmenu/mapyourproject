@@ -1,5 +1,23 @@
-<div class="w3-container">
-  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  </style>
+</head>
+<body class= "project-body">
+
+ <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -44,69 +62,51 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <div class="project-title"></div>
+  <div class="descriptions-container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1 class="project-title"><%= @project.title %></h1>
+        <div class="project-desc">
+          <p><%= @project.description %></p>
+          <h2>Le Projet Comporte</h2>
+          <p><%= @project.description %></p>
+          <hr class="d-sm-none">
+         </div>
 
-  <div class="project-center">
-    <div class="project-title">
-      <h1 id="hph2"><b><%= @project.title %></b> </h1>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag("pdf_icon.png", width:60)%>
+        <%= image_tag("pdf_icon.png", width:60)%>
+        <%= image_tag("3D_icon.png", width:60)%>
+        <br>
+        <%= image_tag("logoifc.png", width: 300)%>
+        <div class="project-infos">
+          <p>Project Owner</p>
+          <h3><%= @project.owner %></h3>
+          <br>
+          <p>Contractor</p>
+          <h3><%= @project.main_contractor %></h3>
+          <br>
+          <p>Duration of the project</p>
+          <h3><%= @project.duration %></h3>
+          <br>
+          <p>Total Budget</p>
+          <h3><%= @project.budget %></h3>
+          <br>
+          <p>Labor Force</p>
+          <h3><%= @project.labor_force %></h3>
+          <br>
+          <p>Longitude & Latitude</p>
+          <h3>long - <%= @project.latitude %> lat - <%= @project.longitude %></h3>
+          <div class="fakeimg" width="50%">MapBox</div>
+        </div>
+      </div>
     </div>
-    <div class="project-description">
-      <p><%= @project.description %></p>
-    </div>
-    <div class="project-infos">
-      <p><%= @project.detail %></p>
-
-    </div>
-
-
   </div>
-
-  <div class="project-details">
-
-    <p>
-      <strong>Owner:</strong>
-        <%= @project.owner %>
-    </p>
-
-    <p>
-      <strong>Main contractor:</strong>
-      <%= @project.main_contractor %>
-    </p>
-
-    <p>
-      <strong>Year:</strong>
-      <%= @project.year_completion %>
-    </p>
-
-    <p>
-      <strong>Duration:</strong>
-      <%= @project.duration %>
-    </p>
-
-    <p>
-      <strong>Labor force:</strong>
-      <%= @project.labor_force %>
-    </p>
-
-    <p>
-      <strong>Latitude:</strong>
-      <%= @project.latitude %>
-    </p>
-    <p>
-      <strong>Longitude:</strong>
-      <%= @project.longitude %>
-    </p>
-    <p>
-
-    <strong>Pdf</strong>
-    <p>
-      <% @project.pdfs.each do |my_pdf| %>
-        Click with right button and open image in new tab<td><%= image_tag my_pdf.pdf_file, width: "1000px" if my_pdf.pdf_file.attached? %></td>
-      <% end %>
-    </p>
-  <div>
-
-</div>
-  <div class="back-btn">
-    <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
-    <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
-  </div>
+  <div class="back-btn-project">
+      <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
+      <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
+    </div>
+</body>
+</html>
