@@ -1,4 +1,4 @@
 class IfcModel < ApplicationRecord
   belongs_to :project
-  has_one_attached :file
+  has_one_attached :file, dependent: :destroy
 end
