@@ -2,6 +2,10 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :detail %>
+  <%= f.input :details_01 %>
+  <%= f.input :details_02 %>
+  <%= f.input :details_03%>
+  <%= f.input :details_04 %>
   <%= f.input :owner %>
   <%= f.input :main_contractor %>
   <%= f.input :year_completion %>
@@ -9,10 +13,7 @@
   <%= f.input :labor_force %>
   <%= f.input :latitude %>
   <%= f.input :longitude %>
-  <i class="fa fa-cloud-upload fa-lg"></i> Upload Photos
-  <%= file_field_tag "images[]", type: :file, multiple: true %>
-  <%= f.fields_for :pdfs, @project.pdfs do |ff| %>
-    <%= ff.file_field :pdf_file %>
-  <% end %>
+  <%= f.label :images%>
+  <%= f.file_field :images, multiple: true %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

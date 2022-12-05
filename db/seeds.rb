@@ -15,7 +15,6 @@ puts "done!"
 puts "BEFORE seed:"
 puts "User count: #{User.count}"
 puts "Project count: #{Project.count}"
-puts "Photo count: #{Photo.count}"
 puts "Video count: #{Video.count}"
 puts "Pdf count: #{Pdf.count}"
 puts "Ifc count: #{IfcModel.count}"
@@ -37,8 +36,8 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar1.png')),
-  filename: 'avatar1.png',
+  io: File.open(Rails.root.join('app/assets/images/avatars/avatar2.png')),
+  filename: 'avatar2.png',
   content_type: 'image/png'
 )
 puts "done!"
@@ -75,22 +74,6 @@ project = Project.create!(
   user: user
 )
 
-photo = Photo.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  project: project
-)
-  photo.image.attach(
-    io: File.open(Rails.root.join('app/assets/user1/1/1_1.jpg')),
-    filename: '1_1.jpeg',
-    content_type: 'image/jpeg'
-  )
-  photo.image.attach(
-     io: File.open(Rails.root.join('app/assets/user1/1/1_2.jpg')),
-     filename: '1_2.jpeg',
-     content_type: 'image/jpeg'
-  )
-
 Video.create!(
   title: "Titre de la video",
   description: "Description de la video",
@@ -103,20 +86,13 @@ pdf = Pdf.create!(
   project: project
 )
 
-  pdf.pdf_file.attach(
-    io: File.open(Rails.root.join('app/assets/user1/1/1_1.pdf')),
-    filename: '1_1.pdf'
-  )
-
 ifc = IfcModel.create!(
   title: "Titre de l'image",
   description: "Description de l'image",
   project: project
 )
-  ifc.file.attach(
-    io: File.open(Rails.root.join('app/assets/user1/1/1_1.ifc')),
-    filename: 'model1.ifc'
-  )
+# file = URI.open("https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_2.jpg")
+# project.images.attach(io: file, filename: '', content_type: 'image/jpg')
 
 Category.create!(
   description: "Description de l'image",
@@ -149,12 +125,12 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
+project.images.attach(
+  io: File.open(Rails.root.join('app/assets/images/projects/user_1/1/1_1.jpg')),
+  filename: '1_1.jpeg',
+  content_type: 'image/jpeg'
 )
+
 
 Video.create!(
   title: "Titre de la video",
@@ -200,13 +176,6 @@ project = Project.create!(
   latitude: 46.77862658517543,
   longitude: 6.6248638498262835,
   user: user
-)
-
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
 )
 
 Video.create!(
@@ -310,12 +279,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Taubenloch",
-  description: "N16",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -382,13 +345,6 @@ project = Project.create!(
   latitude: 46.91139271003274,
   longitude: 6.5447608021140695,
   user: user
-)
-
-Photo.create!(
-  title: "Taubenloch",
-  description: "N16",
-  url: "https://",
-  project: project
 )
 
 Video.create!(
@@ -469,12 +425,7 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Taubenloch",
-  description: "N16",
-  url: "https://",
-  project: project
-)
+
 
 Video.create!(
   title: "Titre de la video",
@@ -547,12 +498,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -629,12 +574,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -688,12 +627,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -752,12 +685,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -813,12 +740,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -873,12 +794,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",

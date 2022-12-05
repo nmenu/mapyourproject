@@ -1,69 +1,116 @@
 <div class="container">
-  <p>
-    <strong>Title:</strong>
-    <%= @project.title %>
-  </p>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @project.description %>
-  </p>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="5000">
+        <% if @project.images.attached? %>
+          <%=   image_tag(@project.images.first,  class: "d-block w-100")%>
+        <% else%>
+          <img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
+        <% end %>
 
-  <p>
-    <strong>Details:</strong>
-    <%= @project.detail %>
-  </p>
+      </div>
 
-  <p>
-    <strong>Owner:</strong>
-    <%= @project.owner %>
-  </p>
+      <div class="carousel-item" data-bs-interval="5000">
+        <% if @project.images.attached? %>
+          <%= image_tag(@project.images.second,  class: "d-block w-100")%>
+        <% else%>
+          <img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
+        <% end %>
 
-  <p>
-    <strong>Main contractor:</strong>
-    <%= @project.main_contractor %>
-  </p>
+      </div>
 
-  <p>
-    <strong>Year:</strong>
-    <%= @project.year_completion %>
-  </p>
+      <div class="carousel-item" data-bs-interval="5000">
 
-  <p>
-    <strong>Duration:</strong>
-    <%= @project.duration %>
-  </p>
+        <% if @project.images.attached? %>
+          <%= image_tag(@project.images.third,  class: "d-block w-100")%>
+        <% else%>
+          <img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
+        <% end %>
+      </div>
+    </div>
 
-  <p>
-    <strong>Labor force:</strong>
-    <%= @project.labor_force %>
-  </p>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
-  <p>
-    <strong>Latitude:</strong>
-    <%= @project.latitude %>
-  </p>
-  <p>
-  <strong>Pdf</strong>
-    <% @project.pdfs.each do |my_pdf| %>
-     <p>Click with right button and open image in new tab<td><%= image_tag my_pdf.pdf_file, width: "1000px" if my_pdf.pdf_file.attached? %></td></p>
-  <% end %>
+  <div class="project-center">
+    <div class="project-title">
+      <h1 id="hph2"><b><%= @project.title %></b> </h1>
+    </div>
+    <div class="project-description">
+      <p><%= @project.description %></p>
+    </div>
+    <div class="project-infos">
+      <p><%= @project.detail %></p>
 
-  </p>
+    </div>
 
-  <p>
-    <strong>Longitude:</strong>
-    <%= @project.longitude %>
-  </p>
 
-  <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
-  <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="project-details">
+
+    <p>
+      <strong>Owner:</strong>
+        <%= @project.owner %>
+    </p>
+
+    <p>
+      <strong>Main contractor:</strong>
+      <%= @project.main_contractor %>
+    </p>
+
+    <p>
+      <strong>Year:</strong>
+      <%= @project.year_completion %>
+    </p>
+
+    <p>
+      <strong>Duration:</strong>
+      <%= @project.duration %>
+    </p>
+
+    <p>
+      <strong>Labor force:</strong>
+      <%= @project.labor_force %>
+    </p>
+
+    <p>
+      <strong>Latitude:</strong>
+      <%= @project.latitude %>
+    </p>
+    <p>
+      <strong>Longitude:</strong>
+      <%= @project.longitude %>
+    </p>
+    <p>
+
+    <strong>Pdf</strong>
+    <p>
+      <% @project.pdfs.each do |my_pdf| %>
+        Click with right button and open image in new tab<td><%= image_tag my_pdf.pdf_file, width: "1000px" if my_pdf.pdf_file.attached? %></td>
+      <% end %>
+    </p>
+  <div>
+
 </div>
-<div data-controller="view-ifc">
-  <canvas id="myCanvas"></canvas>
-</div>
-<div>
-  <% @project.photos.each do |picture| %>
-      <td><%= image_tag picture.image, width: "1000px" if picture.image.attached? %></td>
-  <% end %>
-</div>
+  <div class="back-btn">
+    <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
+    <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="water-mark">
+    <%= image_tag("myp3.png")%>
+  </div>
