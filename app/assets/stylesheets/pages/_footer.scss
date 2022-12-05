@@ -4,18 +4,21 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  padding: 0px 12px;
+  color: rgba(0, 0, 0, 0.3);
   position: fixed;
   bottom: 0;
   width: 100%;
   background-image: url("Logofootert.svg");
   background-repeat: no-repeat;
+  background-position-x: 20px;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
 }
+
 .footer-links a {
   color: black;
   opacity: 0.15;
@@ -23,10 +26,12 @@
   font-size: 24px;
   padding: 0px 10px;
 }
+
 .footer-links a:hover {
   opacity: 1;
   color: $myp;
 }
+
 .footer .fa-heart {
   color: $myp;
 }
