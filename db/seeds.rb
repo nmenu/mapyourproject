@@ -36,9 +36,9 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar2.png')),
-  filename: 'avatar2.png',
-  content_type: 'image/png'
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/avatars/avatar1.jpeg'),
+  filename: 'avatar1.jpeg',
+  content_type: 'image/jpeg'
 )
 puts "done!"
 
@@ -74,12 +74,34 @@ project = Project.create!(
   user: user
 )
 
-project.images.attach(
-  io: URI.open(Rails.root.join('https://mapyourproject.s3.eu-west-3.amazonaws.com/0i06gtl3485hr6l92u0l0njz4vx2')),
-  filename: '1_1.jpeg',
-  content_type: 'image/jpeg'
-)
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_1.jpg'),
+    filename: '1_1.jpg',
+    content_type: 'image/jpg']
 
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_2.jpg'),
+    filename: '1_2.jpg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_3.jpg'),
+    filename: '1_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_4.jpg'),
+    filename: '1_4.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_5.jpg'),
+    filename: '1_5.jpg',
+    content_type: 'image/jpg'
+  ]
+end
 
 Video.create!(
   title: "Titre de la video",
@@ -93,10 +115,10 @@ pdf = Pdf.create!(
   project: project
 )
 
-  pdf.pdf_file.attach(
-    io: File.open(Rails.root.join('app/assets/user1/1/1_1.pdf')),
-    filename: '1_1.pdf'
-  )
+  # pdf.pdf_file.attach(
+  #   io: File.open(Rails.root.join('app/assets/User2/1/1.pdf')),
+  #   filename: '1.pdf'
+  # )
 
 ifc = IfcModel.create!(
   title: "Titre de l'image",
@@ -136,12 +158,34 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_1.jpg'),
+    filename: '2_1.jpg',
+    content_type: 'image/jpg']
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_2.jpg'),
+    filename: '2_2.jpg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_3.jpg'),
+    filename: '2_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_4.jpg'),
+    filename: '2_4.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_5.jpg'),
+    filename: '2_5.jpg',
+    content_type: 'image/jpg'
+  ]
+end
 
 Video.create!(
   title: "Titre de la video",
@@ -189,12 +233,34 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/3_1.jpg'),
+    filename: '3_1.jpeg',
+    content_type: 'image/jpg']
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/3_2.jpg'),
+    filename: '3_2.jpg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/3_3.jpg'),
+    filename: '3_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/3_4.jpg'),
+    filename: '3_4.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/3_5.jpg'),
+    filename: '3_5.jpg',
+    content_type: 'image/jpg'
+  ]
+end
 
 Video.create!(
   title: "Titre de la video",
@@ -240,7 +306,7 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatar2.jpeg')),
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/avatars/avatar2.jpeg'),
   filename: 'avatar2.jpeg',
   content_type: 'image/jpeg'
 )
@@ -296,13 +362,35 @@ project = Project.create!(
   longitude: 7.246423324920784,
   user: user
 )
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/1.jpeg'),
+    filename: '1.jpeg',
+    content_type: 'image/jpg'
+  ]
 
-Photo.create!(
-  title: "Taubenloch",
-  description: "N16",
-  url: "https://",
-  project: project
-)
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/2.jpeg'),
+    filename: '2.jpeg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/3.jpeg'),
+    filename: '3.jpeg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/4.jpeg'),
+    filename: '4.jpeg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/5.jpeg'),
+    filename: '5.jpeg',
+    content_type: 'image/jpg'
+  ]
+end
 
 Video.create!(
   title: "Titre de la video",
@@ -371,12 +459,34 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Taubenloch",
-  description: "N16",
-  url: "https://",
-  project: project
-)
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_1.jpg'),
+    filename: '2_1.jpg',
+    content_type: 'image/jpg']
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_2.jpg'),
+    filename: '2_2.jpeg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_3.jpg'),
+    filename: '2_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_4.jpg'),
+    filename: '2_4.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_5.jpg'),
+    filename: '2_5.jpg',
+    content_type: 'image/jpg'
+  ]
+end
 
 Video.create!(
   title: "Titre de la video",
@@ -455,13 +565,34 @@ project = Project.create!(
   longitude: 6.551665066987425,
   user: user
 )
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_1.jpg'),
+    filename: '3_1.jpg',
+    content_type: 'image/jpg']
 
-Photo.create!(
-  title: "Taubenloch",
-  description: "N16",
-  url: "https://",
-  project: project
-)
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_2.jpg'),
+    filename: '3_2.jpeg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_3.jpg'),
+    filename: '3_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_4.jpeg'),
+    filename: '3_4.jpg',
+    content_type: 'image/jpeg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_5.jpeg'),
+    filename: '3_5.jpeg',
+    content_type: 'image/jpeg'
+  ]
+end
 
 Video.create!(
   title: "Titre de la video",
@@ -508,7 +639,7 @@ user = User.create!(
 )
 
 user.avatar.attach(
-  io: File.open(Rails.root.join('app/assets/images/avatars/avatar3.jpeg')),
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/avatars/avatar3.jpeg'),
   filename: 'avatar3.jpeg',
   content_type: 'image/jpeg'
 )
@@ -534,12 +665,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -616,12 +741,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -675,12 +794,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -739,12 +852,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -800,12 +907,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
@@ -860,12 +961,6 @@ project = Project.create!(
   user: user
 )
 
-Photo.create!(
-  title: "Titre de la photo",
-  description: "Description de la photo",
-  url: "https://",
-  project: project
-)
 
 Video.create!(
   title: "Titre de la video",
