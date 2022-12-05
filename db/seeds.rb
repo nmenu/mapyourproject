@@ -20,7 +20,6 @@ puts "Pdf count: #{Pdf.count}"
 puts "Ifc count: #{IfcModel.count}"
 puts "Category count: #{Category.count}"
 
-
 #----------------------------------------------------
 #--------SEEDING USER 1------------------------------
 print "Seeding User 1... "
@@ -34,13 +33,13 @@ user = User.create!(
   website: "httpw://www.lewagon.com",
   zip_code: 2074
 )
-
 user.avatar.attach(
   io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/avatars/avatar1.jpeg'),
   filename: 'avatar1.jpeg',
   content_type: 'image/jpeg'
 )
 puts "done!"
+
 
 #----------------------------------------------------
 #--------SEEDING OFFER 1 OF USER 1-------------------
