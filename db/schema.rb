@@ -51,11 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_165306) do
     t.index ["project_id"], name: "index_categories_on_project_id"
   end
 
-  create_table "categories_projects", id: false, force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "project_id", null: false
-  end
-
   create_table "ifc_models", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -101,7 +96,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_165306) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category"
     t.string "details_01"
     t.string "details_02"
     t.string "details_03"
