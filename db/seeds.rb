@@ -20,14 +20,26 @@ puts "Pdf count: #{Pdf.count}"
 puts "Ifc count: #{IfcModel.count}"
 puts "Category count: #{Category.count}"
 
-
-
+#----------------------------------------------------
+#--------SEEDING USER 1------------------------------
+print "Seeding User 1... "
+user = User.create!(
+  email: "nico@lewagon.com",
+  password: "123456",
+  company_name: "Architelier SA",
+  description: "Atelier d'architecture",
+  address: "Rue de la gare 10",
+  city: "Marin",
+  website: "httpw://www.lewagon.com",
+  zip_code: 2074
+)
 user.avatar.attach(
   io: File.open(Rails.root.join('app/assets/images/avatars/avatar2.png')),
   filename: 'avatar2.png',
   content_type: 'image/png'
 )
 puts "done!"
+
 
 #----------------------------------------------------
 #--------SEEDING OFFER 1 OF USER 1-------------------
