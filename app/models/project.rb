@@ -8,5 +8,5 @@ class Project < ApplicationRecord
   accepts_nested_attributes_for :photos, allow_destroy: true
   accepts_nested_attributes_for :pdfs, allow_destroy: true
 
-
+  has_many_attached :images
 end

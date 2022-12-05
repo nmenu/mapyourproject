@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :projects do
-    resources :photos
     resources :pdfs, only: %i[new create]
     collection do
       get 'my_projects', to: 'projects#my_projects', as: 'my'
