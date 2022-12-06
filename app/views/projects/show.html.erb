@@ -76,9 +76,12 @@
 
       </div>
       <div class="col-sm-4">
-        <%= image_tag("pdf_icon.png", width:60)%>
-        <%= image_tag("pdf_icon.png", width:60)%>
-        <%= image_tag("3D_icon.png", width:60)%>
+          <%= link_to @project.pdf.url, target: :_blank do %>
+            <%= image_tag("pdf_icon.pn", alt: 'Logo', width: 50)%>
+          <% end %>
+          <%= link_to ifc_project_path, target: :_blank do %>
+            <%= image_tag("3D_icon.png", alt: 'Logo', width: 50)%>
+          <% end %>
         <br>
         <%= image_tag("logoifc.png", width: 300)%>
         <div class="project-infos">

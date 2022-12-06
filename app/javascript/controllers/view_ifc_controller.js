@@ -4,6 +4,8 @@ import { Viewer, WebIFCLoaderPlugin } from "@xeokit/xeokit-sdk";
 export default class extends Controller {
   connect() {
 
+    console.log("Hello from view fucking ifc controller stimulus")
+
     const viewer = new Viewer({
       canvasId: "myCanvas",
       transparent: true
@@ -19,7 +21,7 @@ export default class extends Controller {
     });
 
     const model = webIFCLoader.load({
-      src: "/SampleIFC/IFC4x3_UT-Earthworks-01.ifc",
+      src: "",
       edges: true
     });
   }
