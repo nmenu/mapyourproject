@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $myp;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -27,6 +27,6 @@
 
 #navbarDropdown{
 border-style: solid;
-color: $myp;
-border-width: 3px;
+color: #f4f4f4;
+border-width: 4px;
 }
