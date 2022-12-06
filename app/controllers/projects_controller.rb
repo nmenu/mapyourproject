@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @project.pdfs << Pdf.new
+   # @project.pdfs << Pdf.new
   end
 
   def edit

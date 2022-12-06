@@ -15,9 +15,6 @@ puts "done!"
 puts "BEFORE seed:"
 puts "User count: #{User.count}"
 puts "Project count: #{Project.count}"
-puts "Video count: #{Video.count}"
-puts "Pdf count: #{Pdf.count}"
-puts "Ifc count: #{IfcModel.count}"
 puts "Category count: #{Category.count}"
 
 #----------------------------------------------------
@@ -102,29 +99,15 @@ project = Project.create!(
   ]
 end
 
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  project: project
+project.ifc_model.attach(
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/IFC2x3_Duplex_A_20110907.ifc'),
+  filename: 'IFC2x3_Duplex_A_20110907.ifc'
 )
 
-pdf = Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  project: project
+project.pdf.attach(
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/rutelins.pdf'),
+  filename: 'rutelins.pdf'
 )
-
-  # pdf.pdf_file.attach(
-  #   io: File.open(Rails.root.join('app/assets/User2/1/1.pdf')),
-  #   filename: '1.pdf'
-  # )
-
-ifc = IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  project: project
-)
-
 
 Category.create!(
   description: "Description de l'image",
@@ -186,27 +169,6 @@ project = Project.create!(
   ]
 end
 
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
-)
-
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
-
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -260,27 +222,6 @@ project = Project.create!(
     content_type: 'image/jpg'
   ]
 end
-
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
-)
-
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
 
 Category.create!(
   description: "Description de l'image",
@@ -391,28 +332,6 @@ project = Project.create!(
   ]
 end
 
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
-)
-
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
-
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -487,25 +406,14 @@ project = Project.create!(
   ]
 end
 
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
+project.ifc_model.attach(
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/IFC4x3_UT-Earthworks-01.ifc'),
+  filename: 'IFC4x3_UT-Earthworks-01.ifc'
 )
 
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
+project.pdf.attach(
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/rutelins.pdf'),
+  filename: 'rutelins.pdf'
 )
 
 Category.create!(
@@ -593,27 +501,6 @@ project = Project.create!(
   ]
 end
 
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
-)
-
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
-
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -662,28 +549,6 @@ project = Project.create!(
   latitude: 46.62714499281634,
   longitude: 7.0460816283844,
   user: user
-)
-
-
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
-)
-
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
 )
 
 Category.create!(
@@ -740,28 +605,6 @@ project = Project.create!(
   user: user
 )
 
-
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
-)
-
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
-
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -791,28 +634,6 @@ project = Project.create!(
   latitude: 47.33692740759875,
   longitude: 8.527602248958942,
   user: user
-)
-
-
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
-)
-
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
 )
 
 Category.create!(
@@ -851,28 +672,6 @@ project = Project.create!(
   user: user
 )
 
-
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
-)
-
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
-
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -906,28 +705,6 @@ project = Project.create!(
   user: user
 )
 
-
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
-)
-
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
-
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -958,28 +735,6 @@ project = Project.create!(
   latitude: 46.02013459693927,
   longitude: 7.744136495360522,
   user: user
-)
-
-
-Video.create!(
-  title: "Titre de la video",
-  description: "Description de la video",
-  url: "https://",
-  project: project
-)
-
-Pdf.create!(
-  title: "Titre du PDF",
-  description: "Description du Pdf",
-  url: "https://",
-  project: project
-)
-
-IfcModel.create!(
-  title: "Titre de l'image",
-  description: "Description de l'image",
-  url: "https://",
-  project: project
 )
 
 Category.create!(

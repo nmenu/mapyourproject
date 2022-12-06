@@ -95,14 +95,24 @@
       <strong>Longitude:</strong>
       <%= @project.longitude %>
     </p>
-    <p>
 
-    <strong>Pdf</strong>
     <p>
-      <% @project.pdfs.each do |my_pdf| %>
-        Click with right button and open image in new tab<td><%= image_tag my_pdf.pdf_file, width: "1000px" if my_pdf.pdf_file.attached? %></td>
+      <strong>3D model:</strong>
+      <%= link_to ifc_project_path, target: :_blank do %>
+        <%= image_tag("logoifcofficiel.png", alt: 'Logo', width: 50)%>
       <% end %>
     </p>
+
+    <p>
+      <strong>PDF:</strong>
+      <%= link_to @project.pdf.url, target: :_blank do %>
+        <%= image_tag("logoifcofficiel.png", alt: 'Logo', width: 50)%>
+      <% end %>
+    </p>
+
+
+    <p>
+
   <div>
 
 </div>
