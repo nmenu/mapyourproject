@@ -1,51 +1,48 @@
 <body class= "project-body">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+            <% if @project.images.attached? %>
+              <div class="carousel-indicators">
+                  <% @project.images.each.with_index do |image, i| %>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="<%= i %>" class="<%= 'active' if i == 0%>"></button>
+                  <% end %>
+              </div>
 
-  <div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">
-    <div class="row py-3 shadow-5">
-      <div class="col-12 mb-1">
-        <div class="lightbox">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
-            alt="Gallery image 1"
-            class="ecommerce-gallery-main-img active w-100"
-          />
-        </div>
-      </div>
-      <div class="col-3 mt-1">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
-          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
-          alt="Gallery image 1"
-          class="active w-100"
-        />
-      </div>
-      <div class="col-3 mt-1">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-          alt="Gallery image 2"
-          class="w-100"
-        />
-      </div>
-      <div class="col-3 mt-1">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-          alt="Gallery image 3"
-          class="w-100"
-        />
-      </div>
-      <div class="col-3 mt-1">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
-          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
-          alt="Gallery image 4"
-          class="w-100"
-        />
-      </div>
+              <div class="carousel-inner">
+                <% @project.images.each.with_index do |image, i| %>
+                  <div div class="carousel-item active">
+                    <%= image_tag(image) %>
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="dark">
+                        <h5 id="hss1">Need to look for enterprises you can trust ? Check out their projects !</h5>
+                        <p id="hss1">Are you looking for reference AEC projects in your area or around the world. Find them here!</p>
+                      </div>
+                    </div>
+                  </div>
+            <% end %>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-
   </div>
   <div class="project-title"></div>
   <div class="descriptions-container">
