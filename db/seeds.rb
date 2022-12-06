@@ -100,13 +100,8 @@ project = Project.create!(
 end
 
 project.ifc_model.attach(
-  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/IFC2x3_Duplex_A_20110907.ifc'),
-  filename: 'IFC2x3_Duplex_A_20110907.ifc'
-)
-
-project.pdf.attach(
-  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/rutelins.pdf'),
-  filename: 'rutelins.pdf'
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/arch.ifc'),
+  filename: 'arch.ifc'
 )
 
 Category.create!(
@@ -169,6 +164,11 @@ project = Project.create!(
   ]
 end
 
+project.ifc_model.attach(
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/house.ifc'),
+  filename: 'house.ifc'
+)
+
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -222,6 +222,11 @@ project = Project.create!(
     content_type: 'image/jpg'
   ]
 end
+
+project.ifc_model.attach(
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/hosto.ifc'),
+  filename: 'hosto.ifc'
+)
 
 Category.create!(
   description: "Description de l'image",
@@ -405,11 +410,6 @@ project = Project.create!(
     content_type: 'image/jpg'
   ]
 end
-
-project.ifc_model.attach(
-  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/IFC4x3_UT-Earthworks-01.ifc'),
-  filename: 'IFC4x3_UT-Earthworks-01.ifc'
-)
 
 project.pdf.attach(
   io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/rutelins.pdf'),
