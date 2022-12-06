@@ -23,48 +23,27 @@
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= i %>" class="<%= 'active' if i == 0%>"></button>
             <% end %>
         </div>
+
+        <div class="carousel-inner">
+          <% @project.images.each.with_index do |image, i| %>
+            <div div class="carousel-item active">
+              <%= image_tag(image, alt: SecureRandom.uuid) %>
+            </div>
+          <% end %>
+        </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
   <% if false %>
   <%= yield %>
   <% end %>
 
 
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="5000">
-        <% if @project.images.attached? %>
-          <%=   image_tag(@project.images.first,  class: "d-block w-100")%>
-        <% else%>
-          <img src="https://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif" class="d-block w-100" alt="...">
-        <% end %>
-
-      </div>
-
-      <div class="carousel-item" data-bs-interval="5000">
-        <% if @project.images.attached? %>
-          <%= image_tag(@project.images.second,  class: "d-block w-100")%>
-        <% else%>
-          <img src="https://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif" class="d-block w-100" alt="...">
-        <% end %>
-
-      </div>
-
-      <div class="carousel-item" data-bs-interval="5000">
-
-        <% if @project.images.attached? %>
-          <%= image_tag(@project.images.third,  class: "d-block w-100")%>
-        <% else%>
-          <img src="https://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif" class="d-block w-100" alt="...">
-        <% end %>
-      </div>
-    </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
   <div class="project-title"></div>
   <div class="descriptions-container">
