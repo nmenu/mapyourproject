@@ -12,9 +12,11 @@
   <%= f.input :duration %>
   <%= f.input :labor_force %>
   <%= f.input :latitude %>
-  <%= f.input :longitude %>git
+  <%= f.input :longitude %>
   <%= f.label :images%>
   <%= f.file_field :images, multiple: true %>
+  <%= f.label :PDF %>
+  <%= f.file_field :pdf %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
 
