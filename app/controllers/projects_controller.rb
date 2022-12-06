@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @companies = User.where(projects: @projects).pluck(:company_name)
 
     @markers = @projects.where.not(latitude: nil, longitude: nil).map do | project | #  @markers = Projects.geocoded
       {
