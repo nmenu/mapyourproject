@@ -551,6 +551,35 @@ project = Project.create!(
   user: user
 )
 
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/1/1.jpg'),
+    filename: '3_1.jpg',
+    content_type: 'image/jpg']
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/1/2.jpg'),
+    filename: '3_2.jpg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/1/3.jpg'),
+    filename: '3_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/1/4.jpg'),
+    filename: '3_4.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/1/5.jpg'),
+    filename: '3_5.jpg',
+    content_type: 'image/jpg'
+  ]
+end
+
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -605,6 +634,35 @@ project = Project.create!(
   user: user
 )
 
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/2/1.jpg'),
+    filename: '1_1.jpg',
+    content_type: 'image/jpg']
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/2/2.jpg'),
+    filename: '1_2.jpg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/2/3.jpg'),
+    filename: '1_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/2/4.jpg'),
+    filename: '1_4.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/2/5.jpg'),
+    filename: '1_5.jpg',
+    content_type: 'image/jpg'
+  ]
+end
+
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -635,6 +693,35 @@ project = Project.create!(
   longitude: 8.527602248958942,
   user: user
 )
+
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/3/1.jpg'),
+    filename: '1_1.jpg',
+    content_type: 'image/jpg']
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/3/2.jpg'),
+    filename: '1_2.jpg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/3/3.jpg'),
+    filename: '1_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/3/4.jpg'),
+    filename: '1_4.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/3/5.jpg'),
+    filename: '1_5.jpg',
+    content_type: 'image/jpg'
+  ]
+end
 
 Category.create!(
   description: "Description de l'image",
@@ -672,6 +759,35 @@ project = Project.create!(
   user: user
 )
 
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/4/1.jpg'),
+    filename: '1_1.jpg',
+    content_type: 'image/jpg']
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/4/2.jpg'),
+    filename: '1_2.jpg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/4/3.jpg'),
+    filename: '1_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/4/4.jpg'),
+    filename: '1_4.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/4/5.jpg'),
+    filename: '1_5.jpg',
+    content_type: 'image/jpg'
+  ]
+end
+
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -705,6 +821,35 @@ project = Project.create!(
   user: user
 )
 
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/5/1.jpg'),
+    filename: '1_1.jpg',
+    content_type: 'image/jpg']
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/5/2.jpg'),
+    filename: '1_2.jpg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/5/3.jpg'),
+    filename: '1_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/5/4.jpg'),
+    filename: '1_4.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/5/5.jpg'),
+    filename: '1_5.jpg',
+    content_type: 'image/jpg'
+  ]
+end
+
 Category.create!(
   description: "Description de l'image",
   url: "https://",
@@ -736,6 +881,35 @@ project = Project.create!(
   longitude: 7.744136495360522,
   user: user
 )
+
+5.times do
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/6/1.jpg'),
+    filename: '1_1.jpg',
+    content_type: 'image/jpg']
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/6/2.jpg'),
+    filename: '1_2.jpg',
+    content_type: 'image/jpg'
+  ]
+
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/6/3.jpg'),
+    filename: '1_3.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/6/4.jpg'),
+    filename: '1_4.jpg',
+    content_type: 'image/jpg'
+  ]
+  project.images.attach [
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/6/5.jpg'),
+    filename: '1_5.jpg',
+    content_type: 'image/jpg'
+  ]
+end
 
 Category.create!(
   description: "Description de l'image",
