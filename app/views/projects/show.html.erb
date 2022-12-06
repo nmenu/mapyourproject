@@ -16,13 +16,17 @@
   </style>
 </head>
 <body class= "project-body">
+  <% project = Project.first %>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <% @project.images.each.with_index do |image, i| %>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= i %>" class="<%= 'active' if i == 0%>"></button>
+            <% end %>
+        </div>
+  <% if false %>
+  <%= yield %>
+  <% end %>
 
- <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
 
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="5000">
@@ -76,12 +80,9 @@
 
       </div>
       <div class="col-sm-4">
-          <%= link_to @project.pdf.url, target: :_blank do %>
-            <%= image_tag("pdf_icon.pn", alt: 'Logo', width: 50)%>
-          <% end %>
-          <%= link_to ifc_project_path, target: :_blank do %>
-            <%= image_tag("3D_icon.png", alt: 'Logo', width: 50)%>
-          <% end %>
+        <%= image_tag("pdf_icon.png", width:60)%>
+        <%= image_tag("pdf_icon.png", width:60)%>
+        <%= image_tag("3D_icon.png", width:60)%>
         <br>
         <%= image_tag("logoifc.png", width: 300)%>
         <div class="project-infos">
