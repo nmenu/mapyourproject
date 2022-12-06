@@ -17,3 +17,5 @@
   <%= f.file_field :images, multiple: true %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
+
+<%= @project.errors[:images] %>

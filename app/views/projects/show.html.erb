@@ -1,49 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap 4 Website Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-  .fakeimg {
-    height: 200px;
-    background: #aaa;
-  }
-  </style>
-</head>
 <body class= "project-body">
-  <% project = Project.first %>
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <% @project.images.each.with_index do |image, i| %>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= i %>" class="<%= 'active' if i == 0%>"></button>
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+            <% if @project.images.attached? %>
+              <div class="carousel-indicators">
+                  <% @project.images.each.with_index do |image, i| %>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="<%= i %>" class="<%= 'active' if i == 0%>"></button>
+                  <% end %>
+              </div>
+
+              <div class="carousel-inner">
+                <% @project.images.each.with_index do |image, i| %>
+                  <div div class="carousel-item active">
+                    <%= image_tag(image) %>
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="dark">
+                        <h5 id="hss1">Need to look for enterprises you can trust ? Check out their projects !</h5>
+                        <p id="hss1">Are you looking for reference AEC projects in your area or around the world. Find them here!</p>
+                      </div>
+                    </div>
+                  </div>
             <% end %>
-        </div>
-
-        <div class="carousel-inner">
-          <% @project.images.each.with_index do |image, i| %>
-            <div div class="carousel-item active">
-              <%= image_tag(image, alt: SecureRandom.uuid) %>
-            </div>
-          <% end %>
-        </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-  <% if false %>
-  <%= yield %>
-  <% end %>
-
-
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
   </div>
   <div class="project-title"></div>
   <div class="descriptions-container">
@@ -59,30 +58,33 @@
 
       </div>
       <div class="col-sm-4">
-        <%= image_tag("pdf_icon.png", width:60)%>
-        <%= image_tag("pdf_icon.png", width:60)%>
-        <%= image_tag("3D_icon.png", width:60)%>
+        <%= link_to ifc_project_path, target: :_blank do %>
+          <%= image_tag("3D_icon.png", alt: 'Logo', width: 50)%>
+        <% end %>
+        <%= link_to @project.pdf.url, target: :_blank do %>
+          <%= image_tag("pdf_icon.png", alt: 'Logo', width: 50)%>
+        <% end %>
         <br>
         <%= image_tag("logoifc.png", width: 300)%>
         <div class="project-infos">
-          <p>Project Owner</p>
+          <br>
+          <h3><strong>Project Owner</strong></h3>
           <h3><%= @project.owner %></h3>
           <br>
-          <p>Contractor</p>
+          <h3><strong>Contractor</strong></h3>
           <h3><%= @project.main_contractor %></h3>
           <br>
-          <p>Duration of the project</p>
+          <h3><strong>Duration</strong></h3>
           <h3><%= @project.duration %></h3>
           <br>
-          <p>Total Budget</p>
+          <h3><strong>Total Invested</strong></h3>
           <h3><%= @project.budget %></h3>
           <br>
-          <p>Labor Force</p>
+          <h3><strong>Total Colaborators</strong></h3>
           <h3><%= @project.labor_force %></h3>
           <br>
-          <p>Longitude & Latitude</p>
+          <h3><strong>Geolocalization</strong></h3>
           <h3>long - <%= @project.latitude %> lat - <%= @project.longitude %></h3>
-          <iframe src=<%= "http://127.0.0.1:3000/projects" %> width="100%" height="500px"></iframe>
         </div>
       </div>
     </div>

@@ -1,0 +1,100 @@
+<body class= "project-body">
+
+  <div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">
+    <div class="row py-3 shadow-5">
+      <div class="col-12 mb-1">
+        <div class="lightbox">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
+            alt="Gallery image 1"
+            class="ecommerce-gallery-main-img active w-100"
+          />
+        </div>
+      </div>
+      <div class="col-3 mt-1">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
+          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
+          alt="Gallery image 1"
+          class="active w-100"
+        />
+      </div>
+      <div class="col-3 mt-1">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+          alt="Gallery image 2"
+          class="w-100"
+        />
+      </div>
+      <div class="col-3 mt-1">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+          alt="Gallery image 3"
+          class="w-100"
+        />
+      </div>
+      <div class="col-3 mt-1">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
+          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
+          alt="Gallery image 4"
+          class="w-100"
+        />
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <div class="project-title"></div>
+  <div class="descriptions-container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1 class="project-title"><%= @project.title %></h1>
+        <div class="project-desc">
+          <p><%= @project.description %></p>
+          <h2>Le Projet Comporte</h2>
+          <p><%= @project.description %></p>
+          <hr class="d-sm-none">
+         </div>
+
+      </div>
+      <div class="col-sm-4">
+        <%= link_to ifc_project_path, target: :_blank do %>
+          <%= image_tag("3D_icon.png", alt: 'Logo', width: 50)%>
+        <% end %>
+        <%= link_to @project.pdf.url, target: :_blank do %>
+          <%= image_tag("pdf_icon.png", alt: 'Logo', width: 50)%>
+        <% end %>
+        <br>
+        <%= image_tag("logoifc.png", width: 300)%>
+        <div class="project-infos">
+          <br>
+          <h3><strong>Project Owner</strong></h3>
+          <h3><%= @project.owner %></h3>
+          <br>
+          <h3><strong>Contractor</strong></h3>
+          <h3><%= @project.main_contractor %></h3>
+          <br>
+          <h3><strong>Duration</strong></h3>
+          <h3><%= @project.duration %></h3>
+          <br>
+          <h3><strong>Total Invested</strong></h3>
+          <h3><%= @project.budget %></h3>
+          <br>
+          <h3><strong>Total Colaborators</strong></h3>
+          <h3><%= @project.labor_force %></h3>
+          <br>
+          <h3><strong>Geolocalization</strong></h3>
+          <h3>long - <%= @project.latitude %> lat - <%= @project.longitude %></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="back-btn-project">
+      <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
+      <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
+    </div>
+</body>
+</html>
