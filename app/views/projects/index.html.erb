@@ -1,23 +1,18 @@
-
 <div class="activity-list">
-  <ul>
+  <div class="list-group">
     <% @projects.each do |project| %>
-      <li class="activity-list-item"><td> <%= link_to project.title, project_path(project)%> </td></li>
+      <%= link_to project.title, project_path(project),class: "list-group-item list-group-item-action" %>
     <%end%>
-  </ul>
+  </div>
 </div>
-
 <div class="company">
   <select class="form-select" aria-label="Default select example">
-    <option selected>Search by company</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-    <option value="4">Viva l'Algérie!🇩🇿</option>
-    <option value="5"><%= @companies %></option>
+    <option <%= @selected_company_name.blank? ? 'selected' : nil %> value="">Search by company</option>
+    <% @companies.each do |company| %>
+      <option <%= @selected_company_name == company ? 'selected' : nil %>><%= company %></option>
+    <% end %>
   </select>
 </div>
-
 <div class="parent"
   data-controller="projects"
   data-projects-markers-value="<%= @markers.to_json %>"
