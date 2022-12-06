@@ -14,73 +14,22 @@
   z-index: 1000;
 }
 
-#hss {
-  color: $myp;
-  text-shadow: black 10px 0 10px;
-}
-
-#hss {
-  color: black;
-  text-shadow: rgb(49, 49, 49) 10px 0 10px;
-}
-
-#hph1 {
-  color: rgb(60, 60, 60);
-  padding-top: 40px;
-  text-align: center;
-}
-
-#hpp {
-  padding-top: 10px;
-  color: rgb(60, 60, 60);
-  text-align: center;
-}
-
-#hpp1 {
-  padding-top: 40px;
-  text-align: center;
-}
-
-#expl {
-  padding-top: 10px;
-  padding-right: 300;
-  color: rgb(60, 60, 60);
-  text-align: center;
-}
-
-.div-small {
-  width: 80%;
-  height: 100%;
-  top: 25%;
-  margin: 0 auto;
-  position: relative;
-  text-align: left;
-}
-
-.home-center {
-
-  width: 60%;
-  height: 100%;
-  top: 25%;
-  margin: 0 auto;
-  position: relative;
-  text-align: center;
-}
-
-.home-parag {
-
-  margin: 40px;
-}
-
 .btn-primary {
   color: white;
 }
 
 .btn-primary:hover {
   color: white;
-
 }
 
 .btn-outline-primary:hover {
   color: white;
+}
+
+.hpp {
+  margin: 25px;
+}
+
+.p-2 {
+  margin-bottom: 90px;
 }

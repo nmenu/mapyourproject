@@ -47,64 +47,30 @@
     </button>
   </div>
 
-<div class="container-fluid" style="padding: 100px;">
-  <div class="home-center">
-    <h1 id="hph1"><b>Map Your Project</b></h1>
-    <p id="hpp"><b><i>"Map your Project"</i> is a web platform, where AEC firms can showcase projects to a large audience.<br>
-      Make your SUCCESSFUL, REALIZED, projects viewable 24h/24h, year round, by anyone</p>
+<div class="container p-5">
+  <h1>Map Your Project</h1>
+  <p>"Map your Project" is a web platform, where AEC firms can showcase projects to a large audience.<br>
+  Make your SUCCESSFUL, REALIZED, projects viewable 24h/24h, year round, by anyone</p>
+  <%= link_to "Browse the projects", projects_path, class: "btn btn-outline-primary" %>
+</div>
 
-    <%= link_to "Browse the projects", projects_path, class: "btn btn-outline-primary d-flex justify-content-center" %>
+<div class="container p-2 d-flex justify-content-between">
+  <p class="hpp">Are you a firm active in the AEC industry (Architecture, Engineering or Construction)?
+  Do you need to build a reputation in your domain ? ... Make your expertise shines !
+  Are you an investor, owner, or main contractor in the field of construction ?
+  Do you need to understand the level of competencies of an AEC company ? Review their past projetcs here!</p>
 
-    <div class="home-parag">
-      <h6 id="expl"><b>Are you a firm active in the AEC industry</b> (Architecture, Engineering or Construction) ?<br>
-      Do you need to build a reputation in your domain ? ... Make your expertise shines !<br><br>
-      <b>Are you an investor, owner, or main contractor in the field of construction ?</b><br>
-      Do you need to understand the level of competencies of an AEC company ? Review their past projetcs here!
-    </div>
+  <p class="hpp">You can use the most appropriate medias, from text to 3D models.
+  Upload the latest 3D BIM models (IFC format) to allow for great 3D viewing.
+  upload PDFs, and pictures, or Link back to your company web site and youtube channel.
+  In any of these case, here you can browse though construction projects the easy way.
+  From a geographic map based on location of from a search in our database.
+  Simple and easy ... find the project that interest you.</p>
 
-    <div class="home-parag">
-      <%= image_tag("logoifc.png", width: 300)%>
-    </div>
-
-     <div class="home-parag">
-      <div class="div-small">
-        <ul>
-          <li><h6>You can use the most appropriate medias, from text to 3D models.</h6></li>
-          <li><h6>Upload the latest 3D BIM models (IFC format) to allow for great 3D viewing.</h6></li>
-          <li><h6>upload PDFs, and pictures, or Link back to your company web site and youtube channel.</h6></li>
-        </ul>
-      </div>
-    </div>
-     <div class="home-parag">
-      <h6>In any of these case, here you can browse though construction projects the easy way.
-      From a geographic map based on location of from a search in our database.<br>
-      Simple and easy ... find the project that interest you.</h6>
-    </div>
-     <div class="home-parag">
-      <%= image_tag("logoifc.png", width: 300)%>
-    </div>
-     <div class="home-parag"><h6>
-      How it works.
-      AEC companies can create an acoount in few clicks, manage their user profile then start to upload projects.<br>
-      Projects becomes viewable online within seconds and will be displayed on a world map. <br>
-      "Visitors" can browse projects by location or narrow it down with filters.
-
-      On the other side, you may be a visitors, interrested to find out about construction projects or find out what is a company expertise based on its realization.
-      You don't even need to register and it's all free</h6>
-    </div>
-    <div class="home-parag">
-      <%= image_tag("logoifc.png", width: 300)%> <br>
-    </div>
-    <div class="home-parag">
-
-    </div>
-    <div class="home-parag">
-
-    </div>
-      </h6>
-
-      </div>
-    </div>
-  </div>
-  </div>
+  <p class="hpp">How it works.
+  AEC companies can create an acoount in few clicks, manage their user profile then start to upload projects.
+  Projects becomes viewable online within seconds and will be displayed on a world map.
+  "Visitors" can browse projects by location or narrow it down with filters.
+  On the other side, you may be a visitors, interrested to find out about construction projects or find out what is a company expertise based on its realization.
+  You don't even need to register and it's all free</p>
 </div>

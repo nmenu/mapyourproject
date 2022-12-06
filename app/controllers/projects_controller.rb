@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @companies = User.where(projects: @projects).pluck(:company_name)
     @selected_company_name = params[:company_name]
-    # ...
+    # if selected_company...
 
     @markers = @projects.where.not(latitude: nil, longitude: nil).map do |project| #  @markers = Projects.geocoded
       {
