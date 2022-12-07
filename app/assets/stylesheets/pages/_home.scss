@@ -27,10 +27,17 @@
 
 .hpp {
   margin: 25px;
+  text-align: justify;
+  width: 320px;
+}
+
+.hpi {
+  margin-bottom: 20px;
 }
 
 .p-2 {
-  margin-bottom: 90px;
+  margin-top: calc(20vh - 106px);
+  margin-bottom: 20px;
 }
 
 h1 {
