@@ -10,7 +10,7 @@ class Project < ApplicationRecord
 
   private
   def validate_images
-    return if images.count <= 5
+    return unless images.count.zero?
 
     errors.add(:images, 'Please add an image')
   end
