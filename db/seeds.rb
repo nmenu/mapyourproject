@@ -37,13 +37,12 @@ user.avatar.attach(
 )
 puts "done!"
 
-
 #----------------------------------------------------
 #--------SEEDING OFFER 1 OF USER 1-------------------
 print "Seeding Offer 1 of User 1... "
-project = Project.create!(
+project = Project.new(
   title: "Duplex Les Roseaux",
-  description: "Les travaux que nous avons réalisé là-bas sont les suivants : architecture d intérieur, ingénierie, carrelage, lissage des murs, peinture des lambris dans le séjour et peinture cheminée, démolition des arches pour créer des lignes plus structurées, modification de l’escalier, béton ciré, etc.",
+  description: "Les travaux que nous avons réalisé là-bas sont les suivants : architecture d intérieur, ingénierie, carrelage, lissage des murs, peinture des lambris dans le séjour et peinture cheminée, démolition des arches pour créer des lignes plus structurées, modification de l'escalier, béton ciré, etc.",
   detail: "Le duplex est un un logement constitué de deux étages réunis par l'intérieur, au sein d'un même immeuble.
   Dans certains cas, le duplex a été réalisé par un copropriétaire ayant acheté deux logements, l'un au-dessus de l'autre.
   Une trémie est créée dans le plancher du niveau supérieur afin d'y aménager un escalier intérieur.
@@ -69,51 +68,46 @@ project = Project.create!(
   longitude: 6.457014135924169,
   user: user
 )
-
-5.times do
-  project.images.attach [
+project.images.attach [
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_1.jpg'),
     filename: '1_1.jpg',
-    content_type: 'image/jpg']
-
-  project.images.attach [
+    content_type: 'image/jpg'
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_2.jpg'),
     filename: '1_2.jpg',
     content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_3.jpg'),
     filename: '1_3.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_4.jpg'),
     filename: '1_4.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/1_5.jpg'),
     filename: '1_5.jpg',
     content_type: 'image/jpg'
-  ]
-end
+  }
+]
 
 project.ifc_model.attach(
   io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/1/arch.ifc'),
   filename: 'arch.ifc'
 )
+project.save!
 
-Category.create!(
-  description: "Description de l'image",
-  project: project
-)
 puts "done!"
 
 #----------------------------------------------------
 #--------SEEDING OFFER 2 OF USER 1-------------------
 print "Seeding Offer 2 of User 1... "
-project = Project.create!(
+project = Project.new(
   title: "Residence Perez ",
   description: "Sur les hauteurs de Glovelier, la Villa Duna – une résidence privée conçue par Marianne Preveteau et Victor Perez (chef de projet : Benoît Sgarbi) – se pare des surfaces Marmi Maximum de Fiandre Architectural Surfaces et affirme une style pur à l'élégance raffinée.",
   detail: "Avec une vue époustouflante sur la mer méditerranée en plein cœur de la Côte d’Azur, Villa Duna est une résidence privée de 600 m² à laquelle les architectes ont donné une ligne sobre et résolument contemporaine qui souligne la beauté de la nature environnante.
@@ -135,51 +129,86 @@ project = Project.create!(
   user: user
 )
 
-5.times do
-  project.images.attach [
+project.images.attach [
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_1.jpg'),
     filename: '2_1.jpg',
-    content_type: 'image/jpg']
-
-  project.images.attach [
+    content_type: 'image/jpg'
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_2.jpg'),
     filename: '2_2.jpg',
     content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_3.jpg'),
     filename: '2_3.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_4.jpg'),
     filename: '2_4.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_5.jpg'),
     filename: '2_5.jpg',
     content_type: 'image/jpg'
-  ]
-end
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_6.jpg'),
+    filename: '2_6.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_7.jpg'),
+    filename: '2_7.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_8.jpg'),
+    filename: '2_8.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_9.jpg'),
+    filename: '2_9.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_10.jpg'),
+    filename: '2_10.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_11.jpg'),
+    filename: '2_11.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_12.jpg'),
+    filename: '2_12.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/2_13.jpg'),
+    filename: '2_13.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
 project.ifc_model.attach(
   io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/2/house.ifc'),
   filename: 'house.ifc'
 )
 
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
+project.save!
 puts "done!"
 
 #----------------------------------------------------
 #--------SEEDING OFFER 3 OF USER 1-------------------
 print "Seeding Offer 3 of User 1... "
-project = Project.create!(
+project = Project.new(
   title: "Clinique, Yverdon",
   description: "Projet de construction d'un bâtiment d'une clinique médicale. Il s'agit d'un bâtiment R+2 construit au quartier Messassi en vue d'en faire une clinique pédiatrique et gynécologique. Notre mission: - Conception architecturale - Etudes structurales et ingénierie des lots techniques - Devis estimatif-quantitatif - Documentation - Business Plan",
   detail: "White Arkitekter et HPP Architektes ont été sélectionnés pour concevoir la nouvelle clinique médicale, NMK. Les deux cabinets, qui disposent d'une vaste expérience en matière de conception de soins de santé et d'architecture en bois, ont pour objectif de réaliser un projet dans lequel, outre les aspects d'architecture curative et d'organisation fonctionnelle optimisée, les éléments d'un concept global intégral et durable jouent également un rôle essentiel. La nouvelle clinique médicale de l'hôpital universitaire de Tübingen sera l'un des 34 hôpitaux universitaires d'Allemagne à contribuer à la combinaison réussie d'une médecine, d'une recherche et d'un enseignement performants.",
@@ -194,45 +223,40 @@ project = Project.create!(
   user: user
 )
 
-5.times do
-  project.images.attach [
+project.images.attach [
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/3_1.jpg'),
-    filename: '3_1.jpeg',
-    content_type: 'image/jpg']
-
-  project.images.attach [
+    filename: '3_1.jpg',
+    content_type: 'image/jpg'
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/3_2.jpg'),
     filename: '3_2.jpg',
     content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/3_3.jpg'),
     filename: '3_3.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/3_4.jpg'),
     filename: '3_4.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/3_5.jpg'),
     filename: '3_5.jpg',
     content_type: 'image/jpg'
-  ]
-end
+  }
+]
 
 project.ifc_model.attach(
-  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/hosto.ifc'),
-  filename: 'hosto.ifc'
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User1/3/adsk_building.ifc'),
+  filename: 'adsk_building.ifc'
 )
 
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
+project.save!
 puts "done!"
 
 #----------------------------------------------------
@@ -262,7 +286,7 @@ puts "done!"
 #--------SEEDING OFFER 1 OF USER 2-------------------
 print "Seeding Offer 1 of User 2... "
 
-project = Project.create!(
+project = Project.new(
   title: "N16 - Bözingenfeld",
   description: "Le projet du Taubenloch lot Nord a pour but d’assainir un tronçon de l’autoroute
   N16 d’une longueur d’environ 1 km. Ce lot s’inscrit dans le projet plus vaste
@@ -307,41 +331,51 @@ project = Project.create!(
   longitude: 7.246423324920784,
   user: user
 )
-5.times do
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/1.jpeg'),
-    filename: '1.jpeg',
-    content_type: 'image/jpg'
-  ]
 
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/2.jpeg'),
-    filename: '2.jpeg',
+project.images.attach [
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/1.jpg'),
+    filename: '1.jpg',
     content_type: 'image/jpg'
-  ]
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/2.jpg'),
+    filename: '2.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/3.jpg'),
+    filename: '3.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/4.jpg'),
+    filename: '4.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/5.jpg'),
+    filename: '5.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/6.jpg'),
+    filename: '6.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/7.jpg'),
+    filename: '7.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/3.jpeg'),
-    filename: '3.jpeg',
-    content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/4.jpeg'),
-    filename: '4.jpeg',
-    content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/5.jpeg'),
-    filename: '5.jpeg',
-    content_type: 'image/jpg'
-  ]
-end
-
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
+project.pdf.attach(
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/1/taubenloch.pdf'),
+  filename: 'taubenloch.pdf'
 )
+
+project.save!
 puts "done!"
 
 
@@ -349,7 +383,7 @@ puts "done!"
 #--------SEEDING OFFER 2 OF USER 2-------------------
 print "Seeding Offer 2 of User 2... "
 
-project = Project.create!(
+project = Project.new(
   title: "Tunnel du Bois des Rutelins",
   description: "Le tunnel du Bois des Rutelins se situe sur la route J10 (route principale
   Neuchâtel - Pontarlier - Paris) entre les localités de St Sulpice et Les
@@ -382,52 +416,72 @@ project = Project.create!(
   user: user
 )
 
-5.times do
-  project.images.attach [
+project.images.attach [
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_1.jpg'),
     filename: '2_1.jpg',
-    content_type: 'image/jpg']
-
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_2.jpg'),
-    filename: '2_2.jpeg',
     content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_2.jpg'),
+    filename: '2_2.jpg',
+    content_type: 'image/jpg'
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_3.jpg'),
     filename: '2_3.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_4.jpg'),
     filename: '2_4.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_5.jpg'),
     filename: '2_5.jpg',
     content_type: 'image/jpg'
-  ]
-end
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_6.jpg'),
+    filename: '2_6.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_7.jpg'),
+    filename: '2_7.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_8.jpg'),
+    filename: '2_8.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_9.jpg'),
+    filename: '2_9.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/2_10.jpg'),
+    filename: '2_10.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
 project.pdf.attach(
   io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/2/rutelins.pdf'),
   filename: 'rutelins.pdf'
 )
 
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
+project.save!
 puts "done!"
 
 #----------------------------------------------------
 #--------SEEDING OFFER 3 OF USER 2-------------------
 print "Seeding Offer 3 of User 2... "
 
-project = Project.create!(
+project = Project.new(
   title: "Tunnels du Mormont",
   description: "Les tunnels du Mormont sont situés sur la ligne 210 Daillens Sud - Bienne
   entre la gare d'Eclépens et la halte de Bavois. A la sortie d'Eclépens se
@@ -472,40 +526,41 @@ project = Project.create!(
   longitude: 6.551665066987425,
   user: user
 )
-5.times do
-  project.images.attach [
+
+project.images.attach [
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_1.jpg'),
     filename: '3_1.jpg',
-    content_type: 'image/jpg']
-
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_2.jpg'),
-    filename: '3_2.jpeg',
     content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_2.jpg'),
+    filename: '3_2.jpg',
+    content_type: 'image/jpg'
+  },
+  {
     io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_3.jpg'),
     filename: '3_3.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_4.jpeg'),
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_4.jpg'),
     filename: '3_4.jpg',
-    content_type: 'image/jpeg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_5.jpeg'),
-    filename: '3_5.jpeg',
-    content_type: 'image/jpeg'
-  ]
-end
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/3_5.jpg'),
+    filename: '3_5.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
+project.pdf.attach(
+  io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/mormont.pdf'),
+  filename: 'mormont.pdf'
 )
+
+project.save!
 puts "done!"
 
 
@@ -536,7 +591,7 @@ puts "done!"
 #--------SEEDING OFFER 1 OF USER 3-------------------
 print "Seeding Offer 1 of User 3... "
 
-project = Project.create!(
+project = Project.new(
   title: "Maison Gregoire, Bulles",
   description: "Une architecture maison moderne en pierre, verre, métal et bois. Les trois matériaux tendance, la pierre, le verre et le métal sont parfois combinés tous dans un seul et même projet. C’est justement l’approche qui a été suivie dans ce projet de maison d’architecte moderne par Bone Structure.",
   detail: "Pour adoucir l’aspect de ces trois matériaux froids, les architectes ont eu l’idée d’ajouter une touche de bois à la façade de cette résidence. Le résultat : une belle demeure design moderne ",
@@ -551,47 +606,42 @@ project = Project.create!(
   user: user
 )
 
-5.times do
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/1/1.jpg'),
-    filename: '3_1.jpg',
-    content_type: 'image/jpg']
+project.images.attach [
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/1/1.jpg'),
+    filename: '1.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/1/2.jpg'),
+    filename: '2.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/1/3.jpg'),
+    filename: '3.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/1/4.jpg'),
+    filename: '4.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/1/5.jpg'),
+    filename: '5.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/1/2.jpg'),
-    filename: '3_2.jpg',
-    content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/1/3.jpg'),
-    filename: '3_3.jpg',
-    content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/1/4.jpg'),
-    filename: '3_4.jpg',
-    content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/1/5.jpg'),
-    filename: '3_5.jpg',
-    content_type: 'image/jpg'
-  ]
-end
-
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
+project.save!
 puts "done!"
 
 #----------------------------------------------------
 #--------SEEDING OFFER 2 OF USER 3-------------------
 print "Seeding Offer 2 of User 3..."
 
-project = Project.create!(
+project = Project.new(
   title: "Aéro Firtness, Payerne",
   description: "Notre travail a été motivé par l’intention de donner une identité forte à la salle multi-activités de Mouvaux.
   Notre réflexion a été nourrie par l’envie de partager ces lieux de pratique des sports avec tous les publics, à
@@ -634,47 +684,42 @@ project = Project.create!(
   user: user
 )
 
-5.times do
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/2/1.jpg'),
-    filename: '1_1.jpg',
-    content_type: 'image/jpg']
+project.images.attach [
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/2/1.jpg'),
+    filename: '1.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/2/2.jpg'),
+    filename: '2.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/2/3.jpg'),
+    filename: '3.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/2/4.jpg'),
+    filename: '4.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/2/5.jpg'),
+    filename: '5.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/2/2.jpg'),
-    filename: '1_2.jpg',
-    content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/2/3.jpg'),
-    filename: '1_3.jpg',
-    content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/2/4.jpg'),
-    filename: '1_4.jpg',
-    content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/2/5.jpg'),
-    filename: '1_5.jpg',
-    content_type: 'image/jpg'
-  ]
-end
-
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
+project.save!
 puts "done!"
 
 #----------------------------------------------------
 #--------SEEDING OFFER 3 OF USER 3-------------------
 print "Seeding Offer 3 of User 3..."
 
-project = Project.create!(
+project = Project.new(
   title: "Maison familiale, Zurich",
   description: "Projet d’extension et de rénovation d’une maison individuelle en région Zurichoise.",
   detail: "Le volume de la maison a été redessiné dans le souci d’intégrer le projet au tissu urbain tout en lui donnant
@@ -694,47 +739,42 @@ project = Project.create!(
   user: user
 )
 
-5.times do
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/3/1.jpg'),
-    filename: '1_1.jpg',
-    content_type: 'image/jpg']
+project.images.attach [
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/3/1.jpg'),
+    filename: '1.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/3/2.jpg'),
+    filename: '2.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/3/3.jpg'),
+    filename: '3.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/3/4.jpg'),
+    filename: '4.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/3/5.jpg'),
+    filename: '5.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/3/2.jpg'),
-    filename: '1_2.jpg',
-    content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/3/3.jpg'),
-    filename: '1_3.jpg',
-    content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/3/4.jpg'),
-    filename: '1_4.jpg',
-    content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/3/5.jpg'),
-    filename: '1_5.jpg',
-    content_type: 'image/jpg'
-  ]
-end
-
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
+project.save!
 puts "done!"
 
 #----------------------------------------------------
 #--------SEEDING OFFER 4 OF USER 3-------------------
 print "Seeding Offer 4 of User 3..."
 
-project = Project.create!(
+project = Project.new(
   title: "Granges-Pacot Innovation Center",
   description: "Réalisé en association avec l'agence Celnikier et Grabli Architectes, ce projet est majeur pour le site
   sur lequel nous devions l’intégrer : la rue qui l’accueille, le parc et les jardins qui l’entourent.
@@ -759,48 +799,42 @@ project = Project.create!(
   user: user
 )
 
-5.times do
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/4/1.jpg'),
-    filename: '1_1.jpg',
-    content_type: 'image/jpg']
-
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/4/2.jpg'),
-    filename: '1_2.jpg',
+project.images.attach [
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/4/1.jpg'),
+    filename: '1.jpg',
     content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/4/3.jpg'),
-    filename: '1_3.jpg',
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/4/2.jpg'),
+    filename: '2.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/4/4.jpg'),
-    filename: '1_4.jpg',
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/4/3.jpg'),
+    filename: '3.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/4/5.jpg'),
-    filename: '1_5.jpg',
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/4/4.jpg'),
+    filename: '4.jpg',
     content_type: 'image/jpg'
-  ]
-end
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/4/5.jpg'),
+    filename: '5.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
-
+project.save!
 puts "done!"
 
 #----------------------------------------------------
 #--------SEEDING OFFER 5 OF USER 3-------------------
 print "Seeding Offer 5 of User 3..."
 
-project = Project.create!(
+project = Project.new(
   title: "Maison individuelle du Futur, Annecy",
   description: "Construction ossature bois norme BBC Située sur un terrain en pente vers le nord avec vue sur le Lac
   d'Annecy et terrasse à l'Ouest Surface 170m².",
@@ -821,48 +855,42 @@ project = Project.create!(
   user: user
 )
 
-5.times do
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/5/1.jpg'),
-    filename: '1_1.jpg',
-    content_type: 'image/jpg']
-
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/5/2.jpg'),
-    filename: '1_2.jpg',
+project.images.attach [
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/5/1.jpg'),
+    filename: '1.jpg',
     content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/5/3.jpg'),
-    filename: '1_3.jpg',
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/5/2.jpg'),
+    filename: '2.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/5/4.jpg'),
-    filename: '1_4.jpg',
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/5/3.jpg'),
+    filename: '3.jpg',
     content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/5/5.jpg'),
-    filename: '1_5.jpg',
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/5/4.jpg'),
+    filename: '4.jpg',
     content_type: 'image/jpg'
-  ]
-end
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/5/5.jpg'),
+    filename: '5.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
-
+project.save!
 puts "done!"
 
 #----------------------------------------------------
 #--------SEEDING OFFER 6 OF USER 3-------------------
 print "Seeding Offer 6 of User 3..."
 
-project = Project.create!(
+project = Project.new(
   title: "The Hammock Retreat, Zermatt",
   description: "Accroché à la pente au-dessus du centre du village de Zermatt, exposé à l'ouest, chaque chalet totalise
   200 m² sur trois niveaux, avec ascenseur individuel. ",
@@ -882,39 +910,34 @@ project = Project.create!(
   user: user
 )
 
-5.times do
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/6/1.jpg'),
-    filename: '1_1.jpg',
-    content_type: 'image/jpg']
+project.images.attach [
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/6/1.jpg'),
+    filename: '1.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/6/2.jpg'),
+    filename: '2.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/6/3.jpg'),
+    filename: '3.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/6/4.jpg'),
+    filename: '4.jpg',
+    content_type: 'image/jpg'
+  },
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User3/6/5.jpg'),
+    filename: '5.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/6/2.jpg'),
-    filename: '1_2.jpg',
-    content_type: 'image/jpg'
-  ]
-
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/6/3.jpg'),
-    filename: '1_3.jpg',
-    content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/6/4.jpg'),
-    filename: '1_4.jpg',
-    content_type: 'image/jpg'
-  ]
-  project.images.attach [
-    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/user3/6/5.jpg'),
-    filename: '1_5.jpg',
-    content_type: 'image/jpg'
-  ]
-end
-
-Category.create!(
-  description: "Description de l'image",
-  url: "https://",
-  project: project
-)
+project.save!
 puts "done!"
 #------------------------------------------------------------------------------
