@@ -1,112 +1,103 @@
-<div class="w3-container">
-  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-
+<body class= "project-body">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="5000">
-        <% if @project.images.attached? %>
-          <%=   image_tag(@project.images.first,  class: "d-block w-100")%>
-        <% else%>
-          <img src="https://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif" class="d-block w-100" alt="...">
-        <% end %>
+            <% if @project.images.attached? %>
+              <div class="carousel-indicators">
+                  <% @project.images.each.with_index do |image, i| %>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="<%= i %>" class="<%= 'active' if i == 0%>"></button>
+                  <% end %>
+              </div>
 
-      </div>
+              <div class="carousel-inner">
+                <% @project.images.each do |image| %>
+                  <div div class="carousel-item active">
+                    <img <%= image_tag(image) %>>
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
 
-      <div class="carousel-item" data-bs-interval="5000">
-        <% if @project.images.attached? %>
-          <%= image_tag(@project.images.second,  class: "d-block w-100")%>
-        <% else%>
-          <img src="https://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif" class="d-block w-100" alt="...">
-        <% end %>
-
-      </div>
-
-      <div class="carousel-item" data-bs-interval="5000">
-
-        <% if @project.images.attached? %>
-          <%= image_tag(@project.images.third,  class: "d-block w-100")%>
-        <% else%>
-          <img src="https://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif" class="d-block w-100" alt="...">
-        <% end %>
-      </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="dark">
+                        <h5 id="hss1">Need to look for enterprises you can trust ? Check out their projects !</h5>
+                        <p id="hss1">Are you looking for reference AEC projects in your area or around the world. Find them here!</p>
+                      </div>
+                    </div>
+                  </div>
+            <% end %>
     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-  <div class="project-center">
-    <div class="project-title">
-      <h1 id="hph2"><b><%= @project.title %></b> </h1>
-    </div>
-    <div class="project-description">
-      <p><%= @project.description %></p>
-    </div>
-    <div class="project-infos">
-      <p><%= @project.detail %></p>
-
-    </div>
-
-
   </div>
+  <div class="project-title"></div>
+  <div class="descriptions-container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1 class="project-title"><%= @project.title %></h1>
+        <div class="project-desc">
+          <p><%= @project.description %></p>
+          <h2>Le Projet Comporte</h2>
+          <p><%= @project.description %></p>
+          <hr class="d-sm-none">
+         </div>
 
-  <div class="project-details">
+      </div>
+      <div class="col-sm-4">
+        <%= link_to ifc_project_path, target: :_blank do %>
+          <%= image_tag("3D_icon.png", alt: 'Logo', width: 50)%>
+        <% end %>
+          <% if @project.pdf.attached? %>
+                <%= link_to @project.pdf.url, target: :_blank do %>
+              <%= image_tag("pdf_icon.png", alt: 'Logo', width: 50)%>
+          <% end %>
+        <% end %>
 
-    <p>
-      <strong>Owner:</strong>
-        <%= @project.owner %>
-    </p>
-
-    <p>
-      <strong>Main contractor:</strong>
-      <%= @project.main_contractor %>
-    </p>
-
-    <p>
-      <strong>Year:</strong>
-      <%= @project.year_completion %>
-    </p>
-
-    <p>
-      <strong>Duration:</strong>
-      <%= @project.duration %>
-    </p>
-
-    <p>
-      <strong>Labor force:</strong>
-      <%= @project.labor_force %>
-    </p>
-
-    <p>
-      <strong>Latitude:</strong>
-      <%= @project.latitude %>
-    </p>
-    <p>
-      <strong>Longitude:</strong>
-      <%= @project.longitude %>
-    </p>
-    <p>
-
-    <strong>Pdf</strong>
-    <p>
-      <% @project.pdfs.each do |my_pdf| %>
-        Click with right button and open image in new tab<td><%= image_tag my_pdf.pdf_file, width: "1000px" if my_pdf.pdf_file.attached? %></td>
-      <% end %>
-    </p>
-  <div>
-
-</div>
-  <div class="back-btn">
-    <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
-    <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
+        <br>
+        <%= image_tag("logoifc.png", width: 300)%>
+        <div class="project-infos">
+          <br>
+          <h3><strong>Project Owner</strong></h3>
+          <h3><%= @project.owner %></h3>
+          <br>
+          <h3><strong>Contractor</strong></h3>
+          <h3><%= @project.main_contractor %></h3>
+          <br>
+          <h3><strong>Duration</strong></h3>
+          <h3><%= @project.duration %></h3>
+          <br>
+          <h3><strong>Total Invested</strong></h3>
+          <h3><%= @project.budget %></h3>
+          <br>
+          <h3><strong>Total Colaborators</strong></h3>
+          <h3><%= @project.labor_force %></h3>
+          <br>
+          <h3><strong>Geolocalization</strong></h3>
+          <h3>long - <%= @project.latitude %></h3>
+          <h3>lat - <%= @project.longitude %></h3>
+          <br>
+          <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/nmenu/clar5as90000j15p8t59136ay.html?title=false&access_token=pk.eyJ1Ijoibm1lbnUiLCJhIjoiY2xiMmVzMmx4MDNxdzNucDZocWMzMzBqeiJ9.iaB8XyYRWcZ2N6MyVT2WqA&zoomwheel=false#9.02/46.4331/16.1876/331.2/61" title="nm_monochrome_dark" style="border:none;"></iframe>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="back-btn-project">
+      <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
+      <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
+    </div>
+</body>
+</html>

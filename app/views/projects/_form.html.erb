@@ -15,5 +15,9 @@
   <%= f.input :longitude %>
   <%= f.label :images%>
   <%= f.file_field :images, multiple: true %>
+  <%= f.label :PDF %>
+  <%= f.file_field :pdf %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
+
+<%= @project.errors[:images] %>

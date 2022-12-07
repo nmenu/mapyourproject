@@ -5,7 +5,7 @@
       <div class="col">
         <%= link_to project, class: "noul" do %>
           <div class="card h-100">
-            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="...">
+            <%= image_tag project.images.first, width: "322px", height: "240px" %>
             <div class="card-body">
               <h5 class="card-title"><%= project.title %></h5>
               <p class="card-text"><%= truncate(project.description,length: 100) %></p>

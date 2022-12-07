@@ -1,4 +1,6 @@
 const model = webIFCLoader.load({
-    src: "/SampleIFC/IFC2x3_Clinic_Architectural.ifc",
+
+   src: "<%= @project.ifc_model.url %>",
+
     edges: true
 });
