@@ -1,24 +1,23 @@
 <div class="activity-list">
   <div class="list-group">
+    <div class="company">
+      <select class="form-select" aria-label="Default select example" onchange="javascript:handleSelect(this)">
+        <option <%= @selected_company_name.blank? ? 'selected' : nil %> value="<%= projects_path %>">All companies</option>
+        <% @companies.each do |company| %>
+          <option <%= @selected_company_name == company ? 'selected' : nil %> value="<%= projects_path + '?company_name=' + company %>" ><%= company %> </option>
+        <% end %>
+      </select>
+    </div>
     <% @projects.each do |project| %>
       <%= link_to project.title, project_path(project),class: "list-group-item list-group-item-action" %>
     <%end%>
   </div>
-</div>
-<div class="company">
-  <select class="form-select" aria-label="Default select example" onchange="javascript:handleSelect(this)">
-    <option <%= @selected_company_name.blank? ? 'selected' : nil %> value="<%= projects_path %>">Search by company</option>
-    <% @companies.each do |company| %>
-      <option <%= @selected_company_name == company ? 'selected' : nil %> value="<%= projects_path + '?company_name=' + company %>" ><%= company %> </option>
-    <% end %>
-  </select>
 </div>
 <div class="parent"
   data-controller="projects"
   data-projects-markers-value="<%= @markers.to_json %>"
   data-projects-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-
 <script type="text/javascript">
   function handleSelect(event)
   {
