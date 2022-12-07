@@ -4,8 +4,12 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @companies = User.where(projects: @projects).pluck(:company_name)
+    @selected_company_name = params[:company_name]
 
-    @markers = @projects.where.not(latitude: nil, longitude: nil).map do | project | #  @markers = Projects.geocoded
+    @projects = @projects.joins(:user).where(user: { company_name: params[:company_name] }) if params[:company_name]
+
+    @markers = @projects.where.not(latitude: nil, longitude: nil).map do |project| #  @markers = Projects.geocoded
       {
         lat: project.latitude.to_f,
         lng: project.longitude.to_f,
