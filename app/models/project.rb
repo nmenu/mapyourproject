@@ -9,11 +9,9 @@ class Project < ApplicationRecord
   validate :validate_images
 
   private
-
   def validate_images
     return if images.count <= 1
 
     errors.add(:images, 'Please add an image')
   end
-
 end

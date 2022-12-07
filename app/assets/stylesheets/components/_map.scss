@@ -11,38 +11,41 @@
 .parent {
   width: 100%;
   height: calc(100vh - 106px);
-  position:relative;
+  position: relative;
 }
+
 .maplist {
- background-color: #F2DD72;
- position: absolute;
- top: 0px;
- left: 0px;
+  background-color: #F2DD72;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 
- width: 250px;
- height: 800px;
- z-index: 2
+  width: 250px;
+  height: 800px;
+  z-index: 2
 }
 
-.activity-list{
-  margin-top: 180px;
-  margin-left: 10px;
+.activity-list {
+  margin-top: 20px;
+  margin-left: 20px;
   padding: 3px;
   background-color: $myp;
   border-radius: 3px;
-  position:absolute;
-  min-width: 25px;
+  position: absolute;
+  min-width: 250px;
+  max-height: calc(100vh - 106px);
   z-index: 1000;
 }
 
-.company{
+.company {
   padding: 1px;
 }
 
-.activity-list-item{
-color: rgb(218, 218, 218);
+.activity-list-item {
+  color: rgb(218, 218, 218);
 }
-.activity-list-item a{
-text-decoration: none;
-color: black;
+
+.activity-list-item a {
+  text-decoration: none;
+  color: black;
 }
