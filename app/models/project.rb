@@ -14,5 +14,4 @@ class Project < ApplicationRecord
 
     errors.add(:images, 'Please add an image')
   end
-
 end
