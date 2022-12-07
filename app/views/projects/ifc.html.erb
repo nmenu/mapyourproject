@@ -1,6 +1,4 @@
 const model = webIFCLoader.load({
-
-   src: "<%= @project.ifc_model.url %>",
-
+   src: "<%= @project.ifc_model.url.html_safe %>",
     edges: true
 });
