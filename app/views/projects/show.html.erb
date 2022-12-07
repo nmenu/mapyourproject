@@ -34,20 +34,24 @@
         </button>
       </div>
     </div>
+
       <!-- Buttons -->
-      <div class="back-btn-project">
-        <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
-        <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
-      </div>
+    <div class="back-btn-project">
+      <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
+      <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
+    </div>
     <!-- About Project -->
-    <div class="project-details ">
-      <h3> <%= @project.title %></h3>
+    <div class="project-details row ">
+     <!-- Project title -->
+      <div class="project-title">
+        <h1> <%= @project.title %></h1>
+      </div>
       <!-- Project Description -->
-      <div class="col-sm-8">
+      <div class="project-descriptions col-sm-8">
             <p><%= @project.description %></p>
       </div>
       <!-- Infos about Project -->
-      <div class="col-sm-4">
+      <div class="project-infos col-sm-4">
         <!-- Attached files -->
         <div class="files">
           <%= link_to ifc_project_path, target: :_blank do %>
@@ -66,88 +70,24 @@
         </div>
         <br>
         <!-- Mini Infos -->
-        <div class="project-infos">
+        <div class="parent project-infos">
           <br>
-          <h3><strong>Project Owner</strong></h3>
-          <h3><%= @project.owner %></h3>
-          <br>
-          <h3><strong>Contractor</strong></h3>
-          <h3><%= @project.main_contractor %></h3>
-          <br>
-          <h3><strong>Duration</strong></h3>
-          <h3><%= @project.duration %></h3>
-          <br>
-          <h3><strong>Total Invested</strong></h3>
-          <h3><%= @project.budget %></h3>
-          <br>
-          <h3><strong>Total Colaborators</strong></h3>
-          <h3><%= @project.labor_force %></h3>
-          <br>
-          <h3><strong>Geolocalization</strong></h3>
-          <h3>long - <%= @project.latitude %></h3>
-          <h3>lat - <%= @project.longitude %></h3>
-          <br>
+          <p class="child"><strong>Project Owner</strong></p>
+          <p class="child"><%= @project.owner %></p>
+          <p><strong>Contractor</strong></p>
+          <p><%= @project.main_contractor %></p>
+          <p><strong>Duration</strong></p>
+          <p><%= @project.duration %></p>
+          <p><strong>Total Invested</strong></p>
+          <p><%= @project.budget %></p>
+          <p><strong>Total Colaborators</strong></p>
+          <p><%= @project.labor_force %></p>
+          <p><strong>Geolocalization</strong></p>
+          <p>long - <%= @project.latitude %></p>
+          <p>lat - <%= @project.longitude %></p>
           <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/nmenu/clar5as90000j15p8t59136ay.html?title=false&access_token=pk.eyJ1Ijoibm1lbnUiLCJhIjoiY2xiMmVzMmx4MDNxdzNucDZocWMzMzBqeiJ9.iaB8XyYRWcZ2N6MyVT2WqA&zoomwheel=false#9.02/46.4331/16.1876/331.2/61" title="nm_monochrome_dark" style="border:none;"></iframe>
         </div>
       </div>
     </div>
  </div>
 </body>
-
-  <div class="project-title"></div>
-  <div class="descriptions-">
-    <div class="row">
-      <div class="col-sm-8">
-        <h1 class="project-title"><%= @project.title %></h1>
-        <div class="project-desc">
-          <p><%= @project.description %></p>
-          <h2>Le Projet Comporte</h2>
-          <p><%= @project.description %></p>
-          <hr class="d-sm-none">
-         </div>
-
-      </div>
-      <div class="col-sm-4">
-        <%= link_to ifc_project_path, target: :_blank do %>
-          <%= image_tag("3D_icon.png", alt: 'Logo', width: 50)%>
-        <% end %>
-          <% if @project.pdf.attached? %>
-                <%= link_to @project.pdf.url, target: :_blank do %>
-              <%= image_tag("pdf_icon.png", alt: 'Logo', width: 50)%>
-          <% end %>
-        <% end %>
-
-        <br>
-        <%= image_tag("logoifc.png", width: 300)%>
-        <div class="project-infos">
-          <br>
-          <h3><strong>Project Owner</strong></h3>
-          <h3><%= @project.owner %></h3>
-          <br>
-          <h3><strong>Contractor</strong></h3>
-          <h3><%= @project.main_contractor %></h3>
-          <br>
-          <h3><strong>Duration</strong></h3>
-          <h3><%= @project.duration %></h3>
-          <br>
-          <h3><strong>Total Invested</strong></h3>
-          <h3><%= @project.budget %></h3>
-          <br>
-          <h3><strong>Total Colaborators</strong></h3>
-          <h3><%= @project.labor_force %></h3>
-          <br>
-          <h3><strong>Geolocalization</strong></h3>
-          <h3>long - <%= @project.latitude %></h3>
-          <h3>lat - <%= @project.longitude %></h3>
-          <br>
-          <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/nmenu/clar5as90000j15p8t59136ay.html?title=false&access_token=pk.eyJ1Ijoibm1lbnUiLCJhIjoiY2xiMmVzMmx4MDNxdzNucDZocWMzMzBqeiJ9.iaB8XyYRWcZ2N6MyVT2WqA&zoomwheel=false#9.02/46.4331/16.1876/331.2/61" title="nm_monochrome_dark" style="border:none;"></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="back-btn-project">
-      <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
-      <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
-    </div>
-</body>
-</html>
