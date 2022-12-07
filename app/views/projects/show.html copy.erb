@@ -1,13 +1,20 @@
-<body class= "project-body">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <ol class="carousel-indicators">
-          <% @project.images.each.with_index do |image, i| %>
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="<%= i %>" class="<%= i == 0 ? 'active' : ''%>"></button>
-          <% end %>
-        </ol>
 
+<!-- Body -->
+<body>
+  <!--Container -->
+  <div class="container">
+    <!-- Carousel -->
+    <div class="carousel">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
+          <!-- Carousel indicators-->
+          <div class="carousel-indicators">
+            <% @project.images.each.with_index do |image, i| %>
+              <button type="button" data-bs-target="#carousel" data-bs-slide-to="<%= i %>" class="<%= i == 0 ? 'active' : ''%>"></button>
+            <% end %>
+          </div>
+        <!-- Carousel Images-->
+        <div class="carousel-inner-images">
           <% @project.images.each do |image, i| %>
             <div div class="carousel-item active">
               <%= image_tag image %>>
@@ -15,82 +22,75 @@
           <% end %>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
-  <div class="project-title"></div>
-    <div class="back-btn-project">
-      <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
-      <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
-    </div>
-  <div class="descriptions-container">
-    <div class="row">
-      <div class="col-sm-8">
-        <h1 class="project-title"><%= @project.title %></h1>
-        <div class="project-desc">
-          <p><%= @project.description %></p>
-          <h2>Le Projet Comporte</h2>
-          <p><%= @project.description %></p>
-          <hr class="d-sm-none">
-         </div>
-
+      <!-- Carousel butons-->
+      <div class="carousel-butons">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="col-sm-4">
-        <%= link_to ifc_project_path, target: :_blank do %>
-          <%= image_tag("3D_icon.png", alt: 'Logo', width: 50)%>
-        <% end %>
-          <% if @project.pdf.attached? %>
-                <%= link_to @project.pdf.url, target: :_blank do %>
-              <%= image_tag("pdf_icon.png", alt: 'Logo', width: 50)%>
-          <% end %>
-        <% end %>
+    </div>
+     <!-- Project title -->
+    <div class="project-title">
+        <h1> <%= @project.title %></h1>
+      </div>
+    <!-- About Project -->
+    <div class="project-details row ">
 
+      <!-- Project Description -->
+      <div class="project-descriptions col-sm-8">
+            <p><%= @project.description %></p>
+      </div>
+      <!-- Infos about Project -->
+      <div class="project-infos col-sm-4">
+        <!-- Attached files -->
+        <div class="files">
+          <%= link_to ifc_project_path, target: :_blank do %>
+            <%= image_tag("3D_icon.png", alt: 'Logo', width: 50)%>
+          <% end %>
+          <% if @project.pdf.attached? %>
+            <%= link_to @project.pdf.url, target: :_blank do %>
+              <%= image_tag("pdf_icon.png", alt: 'Logo', width: 50)%>
+            <% end %>
+          <% end %>
+        </div>
         <br>
-        <%= image_tag("logoifc.png", width: 300)%>
-        <div class="project-infos">
+        <!-- Separator -->
+        <div class="separator">
+          <%= image_tag("logoifc.png", width: 300)%>
+        </div>
+        <br>
+        <!-- Mini Infos -->
+        <div class="project-infos-1">
           <br>
-          <h3><strong>Project Owner</strong></h3>
-          <h3><%= @project.owner %></h3>
-          <br>
-          <h3><strong>Contractor</strong></h3>
-          <h3><%= @project.main_contractor %></h3>
-          <br>
-          <h3><strong>Duration</strong></h3>
-          <h3><%= @project.duration %></h3>
-          <br>
-          <h3><strong>Total Invested</strong></h3>
-          <h3><%= @project.budget %></h3>
-          <br>
-          <h3><strong>Total Colaborators</strong></h3>
-          <h3><%= @project.labor_force %></h3>
-          <br>
-          <h3><strong>Geolocalization</strong></h3>
-          <h3>long - <%= @project.latitude %></h3>
-          <h3>lat - <%= @project.longitude %></h3>
-          <br>
-          <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/nmenu/clar5as90000j15p8t59136ay.html?title=false&access_token=pk.eyJ1Ijoibm1lbnUiLCJhIjoiY2xiMmVzMmx4MDNxdzNucDZocWMzMzBqeiJ9.iaB8XyYRWcZ2N6MyVT2WqA&zoomwheel=false#9.02/46.4331/16.1876/331.2/61" title="nm_monochrome_dark" style="border:none;"></iframe>
+          <p><strong>Project Owner</strong></p>
+          <p><%= @project.owner %></p>
+          <p><strong>Contractor</strong></p>
+          <p><%= @project.main_contractor %></p>
+          <p><strong>Duration</strong></p>
+          <p><%= @project.duration %></p>
+        </div>
+        <div class="project-infos-2">
+          <p><strong>Total Invested</strong></p>
+          <p><%= @project.budget %></p>
+          <p><strong>Total Colaborators</strong></p>
+          <p><%= @project.labor_force %></p>
+          <p><strong>Geolocalization</strong></p>
+          <p>long - <%= @project.latitude %></p>
+          <p>lat - <%= @project.longitude %></p>
         </div>
       </div>
     </div>
-  </div>
+    <!-- Buttons -->
+    <div class="back-btn-project">
+      <%= link_to "Go to all projects", projects_path, class: "btn btn-primary" %>
+      <% if user_signed_in?  %>
+        <%= link_to "Go to my projects", my_projects_path, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+ </div>
 </body>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-	<head>
-		<meta charset="UTF-8">
-		<title>House Page</title>
-		<link rel="stylesheet"  type="text/css" href="style.css">
-		<link href="https://fonts.googleapis.com/css?family=Literata&display=swap" rel="stylesheet">
-		<script src="https://kit.fontawesome.com/9b300bd489.js"></script>
-	</head>
-	<body>
