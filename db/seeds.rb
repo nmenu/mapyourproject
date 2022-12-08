@@ -329,7 +329,8 @@ project = Project.new(
   labor_force: 80,
   latitude: 47.17885504795524,
   longitude: 7.246423324920784,
-  user: user
+  user: user,
+  youtube: "https://www.youtube.com/watch?v=PSOKZY7-y7M"
 )
 
 project.images.attach [
@@ -559,6 +560,52 @@ project.pdf.attach(
   io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/3/mormont.pdf'),
   filename: 'mormont.pdf'
 )
+
+project.save!
+puts "done!"
+
+
+#----------------------------------------------------
+#--------SEEDING OFFER 4 OF USER 2-------------------
+print "Seeding Offer 4 of User 2... "
+
+project = Project.new(
+  title: "Villa esplanade",
+  description: "Cette maison est située dans un morcellement qui se trouve dans la périphérie de Genève; la parcelle est
+   exiguë, et la solution répond au maximum admis. L'étude a été faite en collaboration avec le Maître de l'ouvrage,
+   un couple (un avocat et une historienne d'art) avec trois enfants en bas âge..",
+  detail: "Le budget a joué un grand rôle dans l'élaboration du projet, ainsi qu'une recherche d'économie
+  d'énergie-volume cubique, ouvertures réduites sur les façades peu exposées. L'expression de cette
+  maison témoigne d'une recherche de retour à la tradition classique; ce qui a été voulu par les
+  propriétaires, notamment dans la symétrie du plan et le traitement des éléments importants
+  (véranda, corniche, arc, etc.).
+
+  Construction Le sous-sol est construit entièrement en béton armé ainsi que les dalles et les parties
+  supérieures couronnant le bâtiment. La charpente est en bois avec couverture en ardoises d'éternit.
+  Les murs sont en brique de terre cuite crépis à l'extérieur et doublés par une isolation et un mur en
+  brique enduit de plâtre à l'intérieur. Les menuiseries ainsi que plusieurs autres éléments du second œuvre
+   sont des éléments standards choisis dans des catalogues de l'industrie du bâtiment. L'ensemble des couleurs
+    varie dans les tons du rouge-brique et vieux-rose jusqu'au blanc dominant les surfaces intérieures.
+    Bibliographie AS Architecture suisse N° 50. Janvier 1982",
+  owner: "Geco multi",
+  main_contractor: "ESA.sarl",
+  year_completion: "2021",
+  duration: 36,
+  budget: 4000000,
+  labor_force: 20,
+  latitude: 46.187873,
+  longitude: 6.092644,
+  user: user,
+  youtube: "https://www.youtube.com/watch?v=oYMDxb_QdRI"
+)
+
+project.images.attach [
+  {
+    io: URI.open('https://mapyourproject.s3.eu-west-3.amazonaws.com/seed/User2/4/1.jpg'),
+    filename: '1.jpg',
+    content_type: 'image/jpg'
+  }
+]
 
 project.save!
 puts "done!"
