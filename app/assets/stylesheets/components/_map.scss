@@ -12,10 +12,10 @@
   width: 100%;
   height: calc(100vh - 106px);
   position: relative;
+  margin-top: 106px;
 }
 
 .maplist {
-  background-color: #F2DD72;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -29,8 +29,8 @@
   margin-top: 20px;
   margin-left: 20px;
   padding: 3px;
-  background-color: $myp;
-  border-radius: 3px;
+
+  background-color: rgba(1,1,1,0.2);
   position: absolute;
   min-width: 250px;
   max-height: calc(100vh - 106px);
@@ -39,10 +39,6 @@
 
 .company {
   padding: 1px;
-}
-
-.activity-list-item {
-  color: rgb(218, 218, 218);
 }
 
 .activity-list-item a {
