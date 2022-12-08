@@ -1,23 +1,27 @@
  <%= simple_form_for(@project) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :detail %>
-  <%= f.input :details_01 %>
-  <%= f.input :details_02 %>
-  <%= f.input :details_03%>
-  <%= f.input :details_04 %>
-  <%= f.input :owner %>
-  <%= f.input :main_contractor %>
-  <%= f.input :year_completion %>
-  <%= f.input :duration %>
-  <%= f.input :labor_force %>
-  <%= f.input :latitude %>
-  <%= f.input :longitude %>
+  <%= f.input :title,placeholder: "your project name"%>
+  <%= f.input :description, placeholder: "short description 2-3 lines" %>
+  <%= f.input :detail, placeholder: "your full article (copy/past)" %>
+
+  <%= f.input :owner, placeholder: "owner of the project" %>
+  <%= f.input :main_contractor, placeholder: "main contractor of the project" %>
+  <%= f.input :year_completion, placeholder: "2020" %>
+  <%= f.input :duration, placeholder: "duration in months" %>
+  <%= f.input :labor_force, placeholder: "average number of men at work" %>
+  <%= f.input :latitude, placeholder: "example : 46.578654" %>
+  <%= f.input :longitude, placeholder: "example : 7.878654" %>
+
+  <%= f.input :youtube, placeholder: "your youtube link here"%>
   <%= f.label :images%>
   <%= f.file_field :images, multiple: true %>
+  <br><br>
   <%= f.label :PDF %>
   <%= f.file_field :pdf %>
+  <br><br>
+  <%= f.label :IFC %>
+  <%= f.file_field :ifc %>
+  <br><br>
   <%= f.submit class: "btn btn-primary" %>
-<% end %>
+  <% end %>
 
 <%= @project.errors[:images] %>
