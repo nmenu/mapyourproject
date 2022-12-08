@@ -33,7 +33,7 @@
     </div>
     <!-- Project title -->
     <div class="project-title">
-      <h1> <%= @project.title %></h1>
+      <h1 class="pbh1"> <%= @project.title %></h1>
     </div>
     <!-- About Project -->
     <div class="project-details row ">
@@ -66,19 +66,19 @@
         <!-- Mini Infos -->
         <div class="project-infos-1">
           <br>
-          <p><strong>Project Owner</strong></p>
+          <p class="pst">Project Owner</p>
           <p><%= @project.owner %></p>
-          <p><strong>Contractor</strong></p>
+          <p class="pst">Contractor</p>
           <p><%= @project.main_contractor %></p>
-          <p><strong>Duration</strong></p>
+          <p class="pst">Duration</p>
           <p><%= @project.duration %></p>
         </div>
         <div class="project-infos-2">
-          <p><strong>Total Invested</strong></p>
+          <p class="pst">Total Invested</p>
           <p><%= @project.budget %></p>
-          <p><strong>Total Colaborators</strong></p>
+          <p class="pst">Total Colaborators</p>
           <p><%= @project.labor_force %></p>
-          <p><strong>Geolocalization</strong></p>
+          <p class="pst">Geolocalization</p>
           <p>long - <%= @project.latitude %></p>
           <p>lat - <%= @project.longitude %></p>
         </div>

@@ -12,6 +12,7 @@
   width: 100%;
   height: calc(100vh - 106px);
   position: relative;
+  margin-top: 106px;
 }
 
 .maplist {
@@ -38,10 +39,6 @@
 
 .company {
   padding: 1px;
-}
-
-.activity-list-item {
-
 }
 
 .activity-list-item a {
