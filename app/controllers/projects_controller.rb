@@ -70,7 +70,7 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(
       :title, :description, :detail, :details_01, :details_02, :details_03, :details_04, :owner, :main_contractor, :year_completion,
-      :duration, :budget, :labor_force, :latitude, :longitude,:ifc_model, :pdf, images: []
+      :duration, :budget, :labor_force, :latitude, :longitude,:ifc_model, :youtube, :pdf, images: []
     )
   end
 end

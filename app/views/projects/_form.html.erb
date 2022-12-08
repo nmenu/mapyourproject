@@ -1,7 +1,7 @@
  <%= simple_form_for(@project) do |f| %>
   <%= f.input :title,placeholder: "your project name"%>
-  <%= f.input :description, placeholder: "short description 2-3 lines" %>
-  <%= f.input :detail, placeholder: "your full article (copy/past)" %>
+  <%= f.input :description, placeholder: "short description 2-3 lines", as: :text, input_html: {rows: 3,}, placeholder: "a short description (a few lines)" %>
+  <%= f.input :detail, as: :text, input_html: {rows: 10,}, placeholder: "your full article (copy/past)" %>
 
   <%= f.input :owner, placeholder: "owner of the project" %>
   <%= f.input :main_contractor, placeholder: "main contractor of the project" %>
@@ -12,16 +12,34 @@
   <%= f.input :longitude, placeholder: "example : 7.878654" %>
 
   <%= f.input :youtube, placeholder: "your youtube link here"%>
-  <%= f.label :images%>
-  <%= f.file_field :images, multiple: true %>
-  <br><br>
-  <%= f.label :PDF %>
-  <%= f.file_field :pdf %>
-  <br><br>
-  <%= f.label :IFC %>
-  <%= f.file_field :ifc %>
-  <br><br>
-  <%= f.submit class: "btn btn-primary" %>
+
+  <div >
+    <div class="form_align">
+    <%= f.label :images%>
+      <div>
+      <%= f.file_field :images, multiple: true %>
+      </div>
+    </div>
+
+    <div class="form_align">
+    <%= f.label :PDF %>
+      <div>
+        <%= f.file_field :pdf %>
+      </div>
+    </div>
+
+    <div class="form_align">
+    <%= f.label :"Model 3D (format IFC)" %>
+      <div>
+      <%= f.file_field :ifc_model %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form_align">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+
   <% end %>
 
 <%= @project.errors[:images] %>
