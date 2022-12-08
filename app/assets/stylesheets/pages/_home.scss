@@ -32,9 +32,11 @@
 }
 
 .hpi {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display:inline-flex;
+  vertical-align: bottom;
+}
+h3 {
+  margin-left: 20px;
 }
 
 .p-2 {
