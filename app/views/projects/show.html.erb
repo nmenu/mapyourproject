@@ -57,6 +57,11 @@
               <%= image_tag("pdf_icon.png", alt: 'Logo', width: 50)%>
             <% end %>
           <% end %>
+          <% if @project.youtube? %>
+            <%= link_to @project.youtube, target: :_blank do %>
+              <%= image_tag("youtube-icon.png", alt: 'Logo', width: 50)%>
+            <% end %>
+          <% end %>
         </div>
         <br>
         <!-- Separator -->
