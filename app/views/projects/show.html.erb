@@ -49,8 +49,10 @@
       <div class="project-infos col-sm-4">
         <!-- Attached files -->
         <div class="files">
-          <%= link_to ifc_project_path, target: :_blank do %>
-            <%= image_tag("3D_icon.png", alt: 'Logo', width: 50)%>
+          <% if @project.ifc_model.attached? %>
+            <%= link_to ifc_project_path, target: :_blank do %>
+              <%= image_tag("3D_icon.png", alt: 'Logo', width: 50)%>
+            <% end %>
           <% end %>
           <% if @project.pdf.attached? %>
             <%= link_to @project.pdf.url, target: :_blank do %>
