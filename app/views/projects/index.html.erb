@@ -9,7 +9,7 @@
       </select>
     </div>
     <% @projects.each do |project| %>
-      <%= link_to project.title, project_path(project),class: "list-group-item list-group-item-action bg-transparent text-white" %>
+      <%= link_to project.title, project_path(project),class: "list-group-item list-group-item-action bg-transparent" %>
     <%end%>
   </div>
 </div>

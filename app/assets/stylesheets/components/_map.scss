@@ -29,7 +29,6 @@
   margin-top: 20px;
   margin-left: 20px;
   padding: 3px;
-
   background-color: rgba(1,1,1,0.2);
   position: absolute;
   min-width: 250px;
@@ -44,4 +43,17 @@
 .activity-list-item a {
   text-decoration: none;
   color: black;
+}
+
+.form-select:hover {
+  color: white;
+  background-color: #02af9e7a;
+}
+
+.list-group-item-action {
+  color: white;
+}
+
+.list-group-item-action:hover {
+  color: $myp;
 }

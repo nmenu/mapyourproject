@@ -30,3 +30,12 @@ border-style: solid;
 color: $myp;
 border-width: 4px;
 }
+
+.dropdown-item:hover {
+  background-color: $myp;
+  color: white;
+}
+
+.nav-link:hover {
+  color: $myp;
+}
