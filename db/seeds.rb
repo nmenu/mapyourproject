@@ -596,7 +596,7 @@ project = Project.new(
   latitude: 46.187873,
   longitude: 6.092644,
   user: user,
-  youtube: "https://www.youtube.com/watch?v=oYMDxb_QdRI"
+  youtube: "https://www.youtube.com/watch?v=5exHm_GBk9I"
 )
 
 project.images.attach [
